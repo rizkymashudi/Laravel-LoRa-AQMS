@@ -8,6 +8,6 @@ class componentController extends Controller
 {
     public function index(){
         
-        return view('component.index');
+        return view('pages.dashboard');
     }
 }
