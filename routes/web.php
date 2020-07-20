@@ -13,12 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-// Route::get('/admin', function () {
-//     return view('admin');
-// });
-
-Route::get('/')->name('component.dashboard')->uses('componentController@index');
+Route::get('/', 'componentController@index')->name('dashboard');
+Route::get('/About', 'aboutController@index')->name('About');
