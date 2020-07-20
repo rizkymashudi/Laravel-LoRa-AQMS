@@ -1,10 +1,10 @@
  <!-- Sidebar user panel (optional) -->
  <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-    <div class="image">
+    {{-- <div class="image">
       <img src="{{ url('AdminLTE/dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
-    </div>
+    </div> --}}
     <div class="info">
-      <a href="#" class="d-block">Alexander Pierce</a>
+      <a href="#" class="d-block" style="text-align: center">Air Quality Monitoring System <br>LoRa</a>
     </div>
   </div>
 
@@ -144,7 +144,7 @@
         </a>
         <ul class="nav nav-treeview">
           <li class="nav-item">
-            <a href="pages/UI/general.html" class="nav-link">
+            <a href="{{ url('AdminLTE/pages/UI/general.html') }}" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>General</p>
             </a>
@@ -156,37 +156,37 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/UI/buttons.html" class="nav-link">
+            <a href="{{ url('AdminLTE/pages/UI/buttons.html') }}" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Buttons</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/UI/sliders.html" class="nav-link">
+            <a href="{{ url('AdminLTE/pages/UI/sliders.html')}}" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Sliders</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/UI/modals.html" class="nav-link">
+            <a href="{{ url('AdminLTE/pages/UI/modals.html') }}" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Modals & Alerts</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/UI/navbar.html" class="nav-link">
+            <a href="{{ url('AdminLTE/pages/UI/navbar.html') }}" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Navbar & Tabs</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/UI/timeline.html" class="nav-link">
+            <a href="{{ url('AdminLTE/pages/UI/timeline.html') }}" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Timeline</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/UI/ribbons.html" class="nav-link">
+            <a href="{{ url('AdminLTE/pages/UI/ribbons.html') }}" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Ribbons</p>
             </a>
@@ -203,25 +203,25 @@
         </a>
         <ul class="nav nav-treeview">
           <li class="nav-item">
-            <a href="pages/forms/general.html" class="nav-link">
+            <a href="{{ url('AdminLTE/pages/forms/general.html') }}" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>General Elements</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/forms/advanced.html" class="nav-link">
+            <a href="{{ url('AdminLTE/pages/forms/advanced.html') }}" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Advanced Elements</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/forms/editors.html" class="nav-link">
+            <a href="{{ url('AdminLTE/pages/forms/editors.html') }}" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Editors</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/forms/validation.html" class="nav-link">
+            <a href="{{ url('AdminLTE/pages/forms/validation.html') }}" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Validation</p>
             </a>
@@ -238,19 +238,19 @@
         </a>
         <ul class="nav nav-treeview">
           <li class="nav-item">
-            <a href="pages/tables/simple.html" class="nav-link">
+            <a href="{{ url('AdminLTE/pages/tables/simple.html') }}" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Simple Tables</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/tables/data.html" class="nav-link">
+            <a href="{{ url('AdminLTE/pages/tables/data.html') }}" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>DataTables</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/tables/jsgrid.html" class="nav-link">
+            <a href="{{ url('AdminLTE/pages/tables/jsgrid.html') }}" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>jsGrid</p>
             </a>
@@ -259,7 +259,7 @@
       </li>
       <li class="nav-header">EXAMPLES</li>
       <li class="nav-item">
-        <a href="pages/calendar.html" class="nav-link">
+        <a href="{{ url('AdminLTE/pages/calendar.html') }}" class="nav-link">
           <i class="nav-icon far fa-calendar-alt"></i>
           <p>
             Calendar
@@ -268,7 +268,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a href="pages/gallery.html" class="nav-link">
+        <a href="{{ url('AdminLTE/pages/gallery.html') }}" class="nav-link">
           <i class="nav-icon far fa-image"></i>
           <p>
             Gallery
@@ -285,19 +285,19 @@
         </a>
         <ul class="nav nav-treeview">
           <li class="nav-item">
-            <a href="pages/mailbox/mailbox.html" class="nav-link">
+            <a href="{{ url('AdminLTE/pages/mailbox/mailbox.html') }}" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Inbox</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/mailbox/compose.html" class="nav-link">
+            <a href="{{ url('AdminLTE/pages/mailbox/compose.html') }}" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Compose</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/mailbox/read-mail.html" class="nav-link">
+            <a href="{{ url('Adminl/pages/mailbox/read-mail.html') }}" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Read</p>
             </a>
@@ -314,49 +314,49 @@
         </a>
         <ul class="nav nav-treeview">
           <li class="nav-item">
-            <a href="pages/examples/invoice.html" class="nav-link">
+            <a href="{{ url('AdminLTE/pages/examples/invoice.html') }}" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Invoice</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/examples/profile.html" class="nav-link">
+            <a href="{{ url('AdminLTE/pages/examples/profile.html') }}" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Profile</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/examples/e-commerce.html" class="nav-link">
+            <a href="{{ url('AdminLTE/pages/examples/e-commerce.html') }}" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>E-commerce</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/examples/projects.html" class="nav-link">
+            <a href="{{ url('AdminLTE/pages/examples/projects.html') }}" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Projects</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/examples/project-add.html" class="nav-link">
+            <a href="{{ url('AdminLTE/pages/examples/project-add.html') }}" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Project Add</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/examples/project-edit.html" class="nav-link">
+            <a href="{{ url('AdminLTE/pages/examples/project-edit.html') }}" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Project Edit</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/examples/project-detail.html" class="nav-link">
+            <a href="{{ url('AdminLTE/pages/examples/project-detail.html') }}" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Project Detail</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/examples/contacts.html" class="nav-link">
+            <a href="{{ url('AdminLTE/pages/examples/contacts.html') }}" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Contacts</p>
             </a>
@@ -373,73 +373,73 @@
         </a>
         <ul class="nav nav-treeview">
           <li class="nav-item">
-            <a href="pages/examples/login.html" class="nav-link">
+            <a href="{{url('AdminLTE/pages/examples/login.html')}}" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Login</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/examples/register.html" class="nav-link">
+            <a href="{{url('AdminLTE/pages/examples/register.html')}}" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Register</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/examples/forgot-password.html" class="nav-link">
+            <a href="{{url('AdminLTE/pages/examples/forgot-password.html')}}" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Forgot Password</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/examples/recover-password.html" class="nav-link">
+            <a href="{{url('AdminLTE/pages/examples/recover-password.html')}}" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Recover Password</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/examples/lockscreen.html" class="nav-link">
+            <a href="{{url('AdminLTE/pages/examples/lockscreen.html')}}" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Lockscreen</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/examples/legacy-user-menu.html" class="nav-link">
+            <a href="{{url('AdminLTE/pages/examples/legacy-user-menu.html')}}" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Legacy User Menu</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/examples/language-menu.html" class="nav-link">
+            <a href="{{url('AdminLTE/pages/examples/language-menu.html')}}" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Language Menu</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/examples/404.html" class="nav-link">
+            <a href="{{url('AdminLTE/pages/examples/404.html')}}" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Error 404</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/examples/500.html" class="nav-link">
+            <a href="{{url('AdminLTE/pages/examples/500.html')}}" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Error 500</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/examples/pace.html" class="nav-link">
+            <a href="{{url('AdminLTE/pages/examples/pace.html')}}" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Pace</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="pages/examples/blank.html" class="nav-link">
+            <a href="{{url('AdminLTE/pages/examples/blank.html')}}" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Blank Page</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="starter.html" class="nav-link">
+            <a href="{{url('AdminLTE/starter.html')}}" class="nav-link">
               <i class="far fa-circle nav-icon"></i>
               <p>Starter Page</p>
             </a>
