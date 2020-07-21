@@ -6,7 +6,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-12 mt-2">
-			<center><h2 class="tebal mb-2">hello i'm rizky! <br>This is Air Quality Monitoring System using Long Range Communication</h2></center>
+			<center><h2 class="tebal mb-2">Air Quality Monitoring System using Long Range Communication</h2></center>
 			<hr>
 
 			<div class="row mt-5">

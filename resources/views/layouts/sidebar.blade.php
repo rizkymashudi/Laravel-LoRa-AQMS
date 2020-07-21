@@ -11,44 +11,23 @@
       <!-- Add icons to the links using the .nav-icon class
            with font-awesome or any other icon font library -->
       <li class="nav-item">
-        <a href="{{ route('dashboard') }}" class="nav-link active">
+        <a href="{{ route('dashboard') }}" class="nav-link {{ Request::is('/') ? 'active' : null }}">
           <i class="nav-icon fas fa-tachometer-alt"></i>
           <p>Dashboard</p>
         </a>
       </li>
-
-      <li class="nav-item has-treeview">
-        <a href="#" class="nav-link">
-          <i class="nav-icon fas fa-chart-pie"></i>
+ 
+      <li class="nav-item">
+        <a href="#" class="nav-link {{ Request::is('#') ? 'active' : null }}">
+          <i class="nav-icon fas fa-file"></i>
           <p>
-            Charts
-            <i class="right fas fa-angle-left"></i>
+            Blank Page
           </p>
         </a>
-        <ul class="nav nav-treeview">
-          <li class="nav-item">
-            <a href="{{ url('AdminLTE/pages/charts/chartjs.html') }}" class="nav-link">
-              <i class="far fa-circle nav-icon"></i>
-              <p>ChartJS</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="{{ url('AdminLTE/pages/charts/flot.html') }}" class="nav-link">
-              <i class="far fa-circle nav-icon"></i>
-              <p>Flot</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="{{ url('AdminLTE/pages/charts/inline.html') }}" class="nav-link">
-              <i class="far fa-circle nav-icon"></i>
-              <p>Inline</p>
-            </a>
-          </li>
-        </ul>
       </li>
       
       <li class="nav-item">
-        <a href="{{ route('About') }}" class="nav-link">
+        <a href="{{ route('About') }}" class="nav-link {{ Request::is('About') ? 'active' : null }}">
           <i class="nav-icon fas fa-info-circle"></i>
           <p>
             About
