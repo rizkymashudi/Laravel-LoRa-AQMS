@@ -5,14 +5,14 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-12 mt-5">
-			<center><h2 class="tebal mb-5">hello i'm rizky!</h2></center>
+		<div class="col-12 mt-2">
+			<center><h2 class="tebal mb-2">hello i'm rizky! <br>This is Air Quality Monitoring System using Long Range Communication</h2></center>
 			<hr>
 
 			<div class="row mt-5">
-				<div class="col-md-4 border border-dark text-center" style="margin-left: auto; margin-right:auto;text-align: center">
+				<div class="col-md-4 text-center" style="margin-left: auto; margin-right:auto;text-align: center">
 					<div class="card text" style="width: 18rem; margin-left: auto; margin-right:auto;">
-						<img class="card-img-top" src="me.jpg" alt="Card image cap">
+						<img class="card-img-top" src="pp.jpg" alt="Card image cap">
 						<div class="card-body">
 							<p class="card-text">
 								<b>Rizky mashudi</b><br>
@@ -28,15 +28,15 @@
 		</div> <!-- end col -->
 	</div> <!-- end row -->
 
-	<div class="row mt-5">
-		<div class="col-12 border border-dark" style="margin-top: 150px;">
+	<div class="row mt-1">
+		<div class="col-12">
 			<h3 class="text-center text-abu1 mt-4">"an astrophile person"</h3>
 		</div>
 	</div>
 	<div class="row mt-5">
-		<div class="col-12 border border-dark">
+		<div class="col-12">
 			<div class="row d-flex justify-content-center " style="margin: auto;">
-				<div class="col-md-6 py-5 d-flex-justify-content-center border border-dark text-center">
+				<div class="col-md-6 py-5 d-flex-justify-content-center text-center">
 					{{-- instagram --}}
 					<a class="icn col-xl-6" href="https://instagram/hypershit_" target="_blank">
 						<i class="fab fa-instagram fa-lg white-text fa-2x"></i>
