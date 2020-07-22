@@ -113,9 +113,34 @@
         //--------------
     
         // Get context with jQuery - using jQuery's .get() method.
-    
+        // variable PM10
+        var PM  = 'PM'
+        var satu = "\u2081" //unicode 1
+        var nol = "\u2080"  //unicode 0
+        var PM10 = PM+satu+nol
+
+        // variable SO2
+        var SO = 'SO'
+        var dua= '\u2082' //unicode 2
+        var SO2= SO+dua
+
+        // variable CO2
+        var CO = 'CO'
+        var two= '\u2082' //unicode 2
+        var CO2=  CO+two
+
+        // variable O3
+        var O = "O"
+        var tiga = "\u2083" //unicode 3
+        var O3 = O+tiga
+
+        // variable NO2
+        var NO = "NO"
+        var loro = "\u2082" //unicode 2
+        var NO2 = NO+loro
+
         var areaChartData = {
-          labels  : ['PM10', 'SO2', 'CO2', 'O3', 'NO2'],
+          labels  : [ PM10, SO2, CO2, O3, NO2],
           datasets: [
             {
               label               : 'partikulat udara',
@@ -126,7 +151,7 @@
               pointStrokeColor    : 'rgba(60,141,188,1)',
               pointHighlightFill  : '#fff',
               pointHighlightStroke: 'rgba(60,141,188,1)',
-              data                : [50, 100, 199, 299, 330]
+              data                : [{{ $data->payloadtotal }}, 100, 199, 299, 330]
             }
           ]
         }

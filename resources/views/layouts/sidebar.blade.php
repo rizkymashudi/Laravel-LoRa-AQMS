@@ -3,16 +3,37 @@
     {{-- <div class="image">
       <img src="{{ url('AdminLTE/dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
     </div> --}}
-    <a href="javascript:void(0)" class="sa-sidebar-shortcut-toggle" style="color:white;">
-      <p id="waktu" align="center"></p>
+    <div class="col text-center" style="width: auto">
+      <p id="currentDate" style="margin:auto; color:#c2c7d0; font-size: 14px;"></p>
+      <p id="waktu" style="margin:auto; color:#c2c7d0; font-size: 14px;"></p>
+    </div>
+      
       <script>
+          //timer
           var myVar = setInterval(myTimer ,1000);
           function myTimer() {
             var d = new Date();
             document.getElementById("waktu").innerHTML = d.toLocaleTimeString();
           }
+
+          //date
+          $(document).ready(() => {
+            let month = [
+              "Januari", "Febuari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+            ],
+            day = [
+              "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"
+            ],
+            date = new Date();
+            date.setDate(date.getDate());
+            $("#currentDate").html(
+              `${day[date.getDay()]}<br>${
+                month[date.getMonth()]
+              } ${date.getDate()}, ${date.getFullYear()}`
+            );
+          });
       </script>
-  </a>
+  
  </div>
 
   <!-- Sidebar Menu -->
@@ -28,7 +49,7 @@
       </li>
  
       <li class="nav-item">
-        <a href="#" class="nav-link {{ Request::is('#') ? 'active' : null }}">
+        <a href="{{ route('Misc') }}" class="nav-link {{ Request::is('Misc') ? 'active' : null }}">
           <i class="nav-icon fas fa-file"></i>
           <p>
             Blank Page
