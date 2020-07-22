@@ -18,7 +18,7 @@
 								<b>Rizky mashudi</b><br>
 								junior web programmer
 								<br><br>
-								- Programmer - Tester -
+								Web Designer - Programmer - Tester
 							</p>
 						</div>
 					</div>

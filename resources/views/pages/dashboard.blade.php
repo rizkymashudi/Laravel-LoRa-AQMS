@@ -144,19 +144,20 @@
           datasets: [
             {
               label               : 'partikulat udara',
-              backgroundColor     : 'rgba(50, 168, 82)',
-              borderColor         : 'rgba(50, 168, 82)',
+              backgroundColor     : ["#008000", "#008000","#008000","#008000","#008000"],
+              borderColor         : 'rgba(0, 0, 0)',
               pointRadius         : false,
               pointColor          : '#3b8bba',
               pointStrokeColor    : 'rgba(60,141,188,1)',
               pointHighlightFill  : '#fff',
               pointHighlightStroke: 'rgba(60,141,188,1)',
-              data                : [{{ $data->payloadtotal }}, 100, 199, 299, 330]
+              data                : [{{ $data->payloadtotal }}, 150, 70, 20, 330]
             }
           ]
         }
     
-    
+        
+
         //-------------
         //- BAR CHART -
         //-------------
@@ -191,6 +192,38 @@
           data: barChartData,
           options: barChartOptions
         })
+
+        
+        var chartColors = {
+          color1: 'rgba(0, 128, 0)',    //green
+          color2: 'rgba(0, 0, 255)',    //blue
+          color3: 'rgba(255, 255, 0)',  //yellow
+          color4: 'rgba(255, 0, 0)',    //red
+          color5: 'rgba(0, 0, 0)'       //black
+        };
+
+    
+        var dataset = barChart.data.datasets[0];
+        for (var i = 0; i < dataset.data.length; i++) {
+          
+          if (dataset.data[i] >= 0 && dataset.data[i] <= 50) {
+            dataset.backgroundColor[i] = chartColors.color1;
+          }
+          else if ((dataset.data[i] >= 51) && (dataset.data[i] <= 100)){
+            dataset.backgroundColor[i] =  chartColors.color2;
+          }
+          else if((dataset.data[i] >= 101) && (dataset.data[i] <= 199)){
+            dataset.backgroundColor[i] = chartColors.color3;
+          }
+          else if((dataset.data[i] >= 200) && (dataset.data[i] <= 299)){
+            dataset.backgroundColor[i] = chartColors.color4;
+          }
+          else{
+            dataset.backgroundColor[i] = chartColors.color5;
+          }
+        }
+        barChart.update();
       })
+        
     </script>
 @endsection
