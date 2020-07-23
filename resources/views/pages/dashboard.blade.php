@@ -418,6 +418,10 @@
                   min : 0,
                   max : 500,
                   stepSize : 100
+                },
+                scaleLabel: {
+                  display: true,
+                  labelString: 'ISPU'
                 }
               }],
               // xAxes: [{
@@ -468,6 +472,10 @@
                   min : 0,
                   max : 500,
                   stepSize : 100
+                },
+                scaleLabel: {
+                  display: true,
+                  labelString: 'ISPU'
                 }
               }],
               // xAxes: [{
@@ -517,6 +525,10 @@
                   min : 0,
                   max : 500,
                   stepSize : 100
+                },
+                scaleLabel: {
+                  display: true,
+                  labelString: 'ISPU'
                 }
               }],
               // xAxes: [{
@@ -567,6 +579,10 @@
                   min : 0,
                   max : 500,
                   stepSize : 100
+                },
+                scaleLabel: {
+                  display: true,
+                  labelString: 'ISPU'
                 }
               }],
               // xAxes: [{
@@ -618,6 +634,10 @@
                   min : 0,
                   max : 500,
                   stepSize : 100
+                },
+                scaleLabel: {
+                  display: true,
+                  labelString: 'ISPU'
                 }
               }],
               // xAxes: [{
@@ -670,6 +690,10 @@
                   min : 0,
                   max : 500,
                   stepSize : 100
+                },
+                scaleLabel: {
+                  display: true,
+                  labelString: 'ISPU'
                 }
               }],
               // xAxes: [{
