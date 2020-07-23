@@ -1,7 +1,7 @@
 @extends('index')
 
 @section('content')
-<div class="mt-5">
+<div class="mt-4">
     <p style="text-align: center;"><img height="230px" width="300px" align="center" src="/images/underconstruction.png"/></p>
  
     <div>

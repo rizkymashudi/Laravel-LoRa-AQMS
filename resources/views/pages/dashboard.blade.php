@@ -324,11 +324,26 @@
                   min : 0,
                   max : 500,
                   stepSize : 100
+                },
+                scaleLabel: {
+                  display: true,
+                  labelString: 'ISPU'
                 }
               }],
               xAxes: [{
                 barPercentage: 0.4
               }]
+          },
+          annotation: {
+            annotations: [{
+              type: 'line',
+              mode: 'horizontal',
+              scaleID: 'y-axis-0',
+              value: '50',
+              borderColor: 'rgba(0, 128, 0)',
+              borderWidth: 1,
+              drawTime: "afterDraw"
+            }],
           }
 
         }

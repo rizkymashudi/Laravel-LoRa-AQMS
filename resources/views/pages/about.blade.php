@@ -30,7 +30,8 @@
 
 	<div class="row mt-1">
 		<div class="col-12">
-			<h3 class="text-center text-abu1 mt-4">"an astrophile person"</h3>
+			<h3 class="text-center text-abu1 mt-4">"an astrophile person"</h3><br>
+			<h3 class="text-center text-abu1">"besok <b>weekend</b>"</h3>
 		</div>
 	</div>
 	<div class="row mt-5">
