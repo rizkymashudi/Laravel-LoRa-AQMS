@@ -104,8 +104,7 @@
                     <div class="col text-center">
                       <table border="0" style="margin:auto; margin-top:auto; margin-bottom:auto; height:15px;">
                         <tr>
-                          <td valign="middle"><div class="square" style="background-color: green;"></div></td>
-                          <td valign="middle"><p style="margin:auto; font-size:15px;">0 - 50 &nbsp; : &nbsp; Baik</p></td>
+                          <td valign="middle"><p style="margin:auto; font-size:15px;">Particulate Matter, PM<sub>10</sub> (Periode Pengukuran Rata-rata 24 Jam) &#181;g / m<sup>3</sup></p></td>
                         </tr>
                       </table>
                     </div>
@@ -136,8 +135,7 @@
                         <div class="col text-center">
                           <table border="0" style="margin:auto; margin-top:auto; margin-bottom:auto; height:15px;">
                             <tr>
-                              <td valign="middle"><div class="square" style="background-color: green;"></div></td>
-                              <td valign="middle"><p style="margin:auto; font-size:15px;">0 - 50 &nbsp; : &nbsp; Baik</p></td>
+                              <td valign="middle"><p style="margin:auto; font-size:15px;">Sulfur Dioksida, SO<sub>2</sub> (Periode Pengukuran Rata-rata 24 Jam) &#181;g / m<sup>3</sup></p></td>
                             </tr>
                           </table>
                         </div>
@@ -166,8 +164,7 @@
                         <div class="col text-center">
                           <table border="0" style="margin:auto; margin-top:auto; margin-bottom:auto; height:15px;">
                             <tr>
-                              <td valign="middle"><div class="square" style="background-color: green;"></div></td>
-                              <td valign="middle"><p style="margin:auto; font-size:15px;">0 - 50 &nbsp; : &nbsp; Baik</p></td>
+                              <td valign="middle"><p style="margin:auto; font-size:15px;">Carbon monoksida, CO<sub>2</sub> (Periode Pengukuran Rata-rata 8 Jam) &#181;g / m<sup>3</sup></p></td>
                             </tr>
                           </table>
                         </div>
@@ -196,8 +193,7 @@
                         <div class="col text-center">
                           <table border="0" style="margin:auto; margin-top:auto; margin-bottom:auto; height:15px;">
                             <tr>
-                              <td valign="middle"><div class="square" style="background-color: green;"></div></td>
-                              <td valign="middle"><p style="margin:auto; font-size:15px;">0 - 50 &nbsp; : &nbsp; Baik</p></td>
+                              <td valign="middle"><p style="margin:auto; font-size:15px;">Ozon, O<sub>3</sub> (Periode Pengukuran Rata-rata 1 Jam) &#181;g / m<sup>3</sup></p></td>
                             </tr>
                           </table>
                         </div>
@@ -226,8 +222,7 @@
                         <div class="col text-center">
                           <table border="0" style="margin:auto; margin-top:auto; margin-bottom:auto; height:15px;">
                             <tr>
-                              <td valign="middle"><div class="square" style="background-color: green;"></div></td>
-                              <td valign="middle"><p style="margin:auto; font-size:15px;">0 - 50 &nbsp; : &nbsp; Baik</p></td>
+                              <td valign="middle"><p style="margin:auto; font-size:15px;">Nitrogen Dioksida, NO<sub>2</sub> (Periode Pengukuran Rata-rata 1 Jam) &#181;g / m<sup>3</sup></p></td>
                             </tr>
                           </table>
                         </div>
@@ -307,7 +302,7 @@
               pointStrokeColor    : 'rgba(60,141,188,1)',
               pointHighlightFill  : '#fff',
               pointHighlightStroke: 'rgba(60,141,188,1)',
-              data                : [{{ $data->payloadtotal }}, 150, 70, 20, 330]
+              data                : [330, 150, 70, 20, {{ $data->payloadtotal }}]
             }
           ]
         }
