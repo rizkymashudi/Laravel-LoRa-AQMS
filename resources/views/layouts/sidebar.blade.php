@@ -32,8 +32,7 @@
               } ${date.getDate()}, ${date.getFullYear()}`
             );
           });
-      </script>
-  
+      </script> 
  </div>
 
   <!-- Sidebar Menu -->
