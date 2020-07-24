@@ -291,7 +291,7 @@
         var NO2 = NO+loro
 
         var areaChartData = {
-          labels  : [ PM10, SO2, CO2, O3, NO2],
+          labels  : [ PM10, SO2, CO2, O3, NO2 ],
           datasets: [
             {
               label               : 'partikulat udara',
@@ -311,11 +311,61 @@
         var barChartData = jQuery.extend(true, {}, areaChartData)
         var temp0 = areaChartData.datasets[0]
         barChartData.datasets[0] = temp0
-    
+        
+        // horizontal lines
+        // var horizonalLinePlugin = {
+        //   afterDraw: function(chartInstance) {
+        //     var yScale = chartInstance.scales["y-axis-0"];
+        //     var canvas = chartInstance.chart;
+        //     var ctx = barChartCanvas;
+        //     var index;
+        //     var line;
+        //     var style;
+
+        //     if (chartInstance.options.horizontalLine) {
+        //       for (index = 0; index < chartInstance.options.horizontalLine.length; index++) {
+        //         line = chartInstance.options.horizontalLine[index];
+
+        //         if (!line.style) {
+        //           style = 'rgba(0, 0, 0)';
+        //         } else {
+        //           style = line.style;
+        //         }
+
+        //         if (line.y) {
+        //           yValue = yScale.getPixelForValue(line.y);
+        //         } else {
+        //           yValue = 0;
+        //         }
+
+        //         ctx.lineWidth = 1;
+
+        //         if (yValue) {
+        //           ctx.beginPath();
+        //           ctx.moveTo(0, yValue);
+        //           ctx.lineTo(canvas.width, yValue);
+        //           ctx.strokeStyle = style;
+        //           ctx.stroke();
+        //         }
+
+        //         if (line.text) {
+        //           ctx.fillStyle = style;
+        //           // ctx.fillText(line.text, 0, yValue + ctx.lineWidth);
+        //         }
+        //       }
+        //       return;
+        //     };
+        //   }
+        // };
+        // Chart.pluginService.register(horizonalLinePlugin);
+        
         var barChartOptions = {
           responsive              : true,
           maintainAspectRatio     : false,
           datasetFill             : false,
+          legend:{
+            display : false
+          },
           scales: {
               yAxes: [{
                 display: true,
@@ -335,23 +385,45 @@
               }]
           },
           annotation: {
-            annotations: [{
-              type: 'line',
-              mode: 'horizontal',
-              scaleID: 'y-axis-0',
-              value: '50',
-              borderColor: 'rgba(0, 128, 0)',
-              borderWidth: 1,
-              drawTime: "afterDraw"
-            }],
-          }
+              annotations: [{
+                  type: 'line',
+                  mode: 'horizontal',
+                  scaleID: 'y-axis-0',
+                  value: '26',
+                  borderColor: 'tomato',
+                  borderWidth: 1
+              }],
+              drawTime: "afterDraw" // (default)
+          },
+          // horizontalLine: [{
+          //   y: 500,
+          //   style: 'rgba(0, 0, 0)',
+          //   text: "Berbahaya"
+          // },
+          // {
+          //   y: 299,
+          //   style: 'rgba(255, 0, 0)',
+          //   text: "Sangat tidak sehat"
+          // },{
+          //   y: 199,
+          //   style: 'rgba(255, 255, 0)',
+          //   text: "Tidak sehat"
+          // }, {
+          //   y: 100,
+          //   style: 'rgba(0, 0, 255)',
+          //   text: "sedang"
+          // }, {
+          //   y: 50,
+          //   style: 'rgba(0, 128, 0)',
+          //   text: "baik"
+          // }]
 
         }
     
         var barChart = new Chart(barChartCanvas, {
           type: 'bar', 
           data: barChartData,
-          options: barChartOptions
+          options: barChartOptions,
         })
 
         var chartColors = {
@@ -393,6 +465,7 @@
             {
               label               : PM10,
               borderColor         : 'rgba(52, 189, 235)',
+              pointBorderWidth    : 3,
               fill                : false,
               lineTension         : 0,
               data                : [{{ $data->payloadtotal }}, 150, 70, 20, 330, 80, 43]
@@ -448,6 +521,7 @@
             {
               label               : SO2,
               borderColor         : 'rgba(52, 189, 235)',
+              pointBorderWidth    : 3,
               fill                : false,
               lineTension         : 0,
               data                : [{{ $data->payloadtotal }}, 150, 70, 20, 330, 80, 43]
@@ -501,6 +575,7 @@
             {
               label               : CO2,
               borderColor         : 'rgba(52, 189, 235)',
+              pointBorderWidth    : 3,
               fill                : false,
               lineTension         : 0,
               data                : [{{ $data->payloadtotal }}, 150, 70, 20, 330, 80, 43]
@@ -554,6 +629,7 @@
             {
               label               : SO2,
               borderColor         : 'rgba(52, 189, 235)',
+              pointBorderWidth    : 3,
               fill                : false,
               lineTension         : 0,
               data                : [{{ $data->payloadtotal }}, 150, 70, 20, 330, 80, 43]
@@ -608,6 +684,7 @@
             {
               label               : O3,
               borderColor         : 'rgba(52, 189, 235)',
+              pointBorderWidth    : 3,
               fill                : false,
               lineTension         : 0,
               data                : [{{ $data->payloadtotal }}, 150, 70, 20, 330, 80, 43]
@@ -664,6 +741,7 @@
             {
               label               : NO2,
               borderColor         : 'rgba(52, 189, 235)',
+              pointBorderWidth    : 3,
               fill                : false,
               lineTension         : 0,
               data                : [{{ $data->payloadtotal }}, 150, 70, 20, 330, 80, 43]
