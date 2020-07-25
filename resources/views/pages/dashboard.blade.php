@@ -512,7 +512,9 @@
                 }
               }],
               // xAxes: [{
-              //   barPercentage: 0.4
+              //   realtime: {
+              //     delay: 3000
+              //   }
               // }]
           },
           
