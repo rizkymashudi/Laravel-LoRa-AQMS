@@ -291,7 +291,7 @@
         var NO2 = NO+loro
 
         var areaChartData = {
-          labels  : [ PM10, SO2, CO2, O3, NO2],
+          labels  : [ PM10, SO2, CO2, O3, NO2 ],
           datasets: [
             {
               label               : 'partikulat udara',
@@ -311,11 +311,16 @@
         var barChartData = jQuery.extend(true, {}, areaChartData)
         var temp0 = areaChartData.datasets[0]
         barChartData.datasets[0] = temp0
-    
+        
+        
+        
         var barChartOptions = {
           responsive              : true,
           maintainAspectRatio     : false,
           datasetFill             : false,
+          legend:{
+            display : false
+          },
           scales: {
               yAxes: [{
                 display: true,
@@ -335,23 +340,87 @@
               }]
           },
           annotation: {
-            annotations: [{
-              type: 'line',
-              mode: 'horizontal',
-              scaleID: 'y-axis-0',
-              value: '50',
-              borderColor: 'rgba(0, 128, 0)',
-              borderWidth: 1,
-              drawTime: "afterDraw"
-            }],
+              annotations: [{
+                id: 'hline2',
+                type: 'line',
+                mode: 'horizontal',
+                scaleID: 'y-axis-0',
+                value: '51',
+                borderColor: 'rgba(0, 0, 255)',
+                borderWidth: 1,
+                label: {
+                  xAdjust: 2,
+                  content: "Sedang",
+                  fontColor: "#acacac",
+                  fontSize: 9,
+                  backgroundColor: "white",
+                  position: 'left',
+                  enabled: true,
+                }
+              }, {
+                id: 'hline3',
+                type: 'line',
+                mode: 'horizontal',
+                scaleID: 'y-axis-0',
+                value: '101',
+                borderColor: 'rgba(255, 255, 0)',
+                borderWidth: 1,
+                label: {
+                  xAdjust: 2,
+                  content: "Tidak sehat",
+                  fontColor: "#acacac",
+                  fontSize: 9,
+                  backgroundColor: "white",
+                  position: 'left',
+                  enabled: true,
+                }
+              }, {
+                id: 'hline4',
+                type: 'line',
+                mode: 'horizontal',
+                scaleID: 'y-axis-0',
+                value: '200',
+                borderColor: 'rgba(255, 0, 0)',
+                borderWidth: 1,
+                label: {
+                  xAdjust: 2,
+                  content: "Sangat tidak sehat",
+                  fontColor: "#acacac",
+                  fontSize: 9,
+                  backgroundColor: "white",
+                  position: 'left',
+                  enabled: true,
+                }
+              },  {
+                id: 'hline5',
+                type: 'line',
+                mode: 'horizontal',
+                scaleID: 'y-axis-0',
+                value: '300',
+                borderColor: 'rgba(0, 0, 0)',
+                borderWidth: 2,
+                label: {
+                  xAdjust: 2,
+                  content: "BERBAHAYA!",
+                  fontColor: "#acacac",
+                  fontSize: 9,
+                  backgroundColor: "white",
+                  position: 'left',
+                  enabled: true,
+                }
+              }
+              
+              ],
+              drawTime: "afterDraw" // (default)
           }
 
         }
+
     
         var barChart = new Chart(barChartCanvas, {
           type: 'bar', 
           data: barChartData,
-          options: barChartOptions
+          options: barChartOptions,
         })
 
         var chartColors = {
@@ -393,6 +462,7 @@
             {
               label               : PM10,
               borderColor         : 'rgba(52, 189, 235)',
+              pointBorderWidth    : 3,
               fill                : false,
               lineTension         : 0,
               data                : [{{ $data->payloadtotal }}, 150, 70, 20, 330, 80, 43]
@@ -425,7 +495,9 @@
                 }
               }],
               // xAxes: [{
-              //   barPercentage: 0.4
+              //   realtime: {
+              //     delay: 3000
+              //   }
               // }]
           },
           
@@ -448,6 +520,7 @@
             {
               label               : SO2,
               borderColor         : 'rgba(52, 189, 235)',
+              pointBorderWidth    : 3,
               fill                : false,
               lineTension         : 0,
               data                : [{{ $data->payloadtotal }}, 150, 70, 20, 330, 80, 43]
@@ -501,6 +574,7 @@
             {
               label               : CO2,
               borderColor         : 'rgba(52, 189, 235)',
+              pointBorderWidth    : 3,
               fill                : false,
               lineTension         : 0,
               data                : [{{ $data->payloadtotal }}, 150, 70, 20, 330, 80, 43]
@@ -554,6 +628,7 @@
             {
               label               : SO2,
               borderColor         : 'rgba(52, 189, 235)',
+              pointBorderWidth    : 3,
               fill                : false,
               lineTension         : 0,
               data                : [{{ $data->payloadtotal }}, 150, 70, 20, 330, 80, 43]
@@ -608,6 +683,7 @@
             {
               label               : O3,
               borderColor         : 'rgba(52, 189, 235)',
+              pointBorderWidth    : 3,
               fill                : false,
               lineTension         : 0,
               data                : [{{ $data->payloadtotal }}, 150, 70, 20, 330, 80, 43]
@@ -664,6 +740,7 @@
             {
               label               : NO2,
               borderColor         : 'rgba(52, 189, 235)',
+              pointBorderWidth    : 3,
               fill                : false,
               lineTension         : 0,
               data                : [{{ $data->payloadtotal }}, 150, 70, 20, 330, 80, 43]
