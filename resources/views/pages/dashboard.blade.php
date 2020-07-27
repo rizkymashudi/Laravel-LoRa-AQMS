@@ -348,15 +348,15 @@
                 value: '51',
                 borderColor: 'rgba(0, 0, 255)',
                 borderWidth: 1,
-                label: {
-                  xAdjust: 2,
-                  content: "Sedang",
-                  fontColor: "#acacac",
-                  fontSize: 9,
-                  backgroundColor: "white",
-                  position: 'left',
-                  enabled: true,
-                }
+                // label: {
+                //   xAdjust: 2,
+                //   content: "Sedang",
+                //   fontColor: "#acacac",
+                //   fontSize: 9,
+                //   backgroundColor: "white",
+                //   position: 'left',
+                //   enabled: true,
+                // }
               }, {
                 id: 'hline3',
                 type: 'line',
@@ -365,15 +365,15 @@
                 value: '101',
                 borderColor: 'rgba(255, 255, 0)',
                 borderWidth: 1,
-                label: {
-                  xAdjust: 2,
-                  content: "Tidak sehat",
-                  fontColor: "#acacac",
-                  fontSize: 9,
-                  backgroundColor: "white",
-                  position: 'left',
-                  enabled: true,
-                }
+                // label: {
+                //   xAdjust: 2,
+                //   content: "Tidak sehat",
+                //   fontColor: "#acacac",
+                //   fontSize: 9,
+                //   backgroundColor: "white",
+                //   position: 'left',
+                //   enabled: true,
+                // }
               }, {
                 id: 'hline4',
                 type: 'line',
@@ -382,15 +382,15 @@
                 value: '200',
                 borderColor: 'rgba(255, 0, 0)',
                 borderWidth: 1,
-                label: {
-                  xAdjust: 2,
-                  content: "Sangat tidak sehat",
-                  fontColor: "#acacac",
-                  fontSize: 9,
-                  backgroundColor: "white",
-                  position: 'left',
-                  enabled: true,
-                }
+                // label: {
+                //   xAdjust: 2,
+                //   content: "Sangat tidak sehat",
+                //   fontColor: "#acacac",
+                //   fontSize: 9,
+                //   backgroundColor: "white",
+                //   position: 'left',
+                //   enabled: true,
+                // }
               },  {
                 id: 'hline5',
                 type: 'line',
@@ -399,15 +399,15 @@
                 value: '300',
                 borderColor: 'rgba(0, 0, 0)',
                 borderWidth: 2,
-                label: {
-                  xAdjust: 2,
-                  content: "BERBAHAYA!",
-                  fontColor: "#acacac",
-                  fontSize: 9,
-                  backgroundColor: "white",
-                  position: 'left',
-                  enabled: true,
-                }
+                // label: {
+                //   xAdjust: 2,
+                //   content: "BERBAHAYA!",
+                //   fontColor: "#acacac",
+                //   fontSize: 9,
+                //   backgroundColor: "white",
+                //   position: 'left',
+                //   enabled: true,
+                // }
               }
               
               ],
@@ -456,8 +456,13 @@
         //-------------------
         //- LINE CHART PM10 -
         //-------------------
+
+        function newDate(days){
+          return moment().add(days, 'd');
+        }
+        
         var lineChartPMData = {
-          labels  : [ 'senin', 'selasa', 'rabu', 'kamis', 'jumat', 'sabtu', 'minggu'],
+          labels  : [ '01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00', '00:00'],
           datasets: [
             {
               label               : PM10,
@@ -494,11 +499,6 @@
                   labelString: 'ISPU'
                 }
               }],
-              // xAxes: [{
-              //   realtime: {
-              //     delay: 3000
-              //   }
-              // }]
           },
           
         }
@@ -569,7 +569,7 @@
         //- LINE CHART CO2 -
         //------------------
         var lineChartCOData = {
-          labels  : [ 'senin', 'selasa', 'rabu', 'kamis', 'jumat', 'sabtu', 'minggu'],
+          labels  : ['01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00', '00:00'],
           datasets: [
             {
               label               : CO2,
@@ -605,9 +605,7 @@
                   labelString: 'ISPU'
                 }
               }],
-              // xAxes: [{
-              //   barPercentage: 0.4
-              // }]
+              
           }
         }
 
