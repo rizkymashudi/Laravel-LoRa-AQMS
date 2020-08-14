@@ -273,6 +273,15 @@
       }
     </style>
     <script>
+
+      var chartColors = {
+        color1: 'rgba(0, 128, 0)',    //green
+        color2: 'rgba(0, 0, 255)',    //blue
+        color3: 'rgba(255, 255, 0)',  //yellow
+        color4: 'rgba(255, 0, 0)',    //red
+        color5: 'rgba(0, 0, 0)'       //black
+      };
+
       $(function () {
         /* ChartJS
          * -------
@@ -444,13 +453,7 @@
           options: barChartOptions,
         })
 
-        var chartColors = {
-          color1: 'rgba(0, 128, 0)',    //green
-          color2: 'rgba(0, 0, 255)',    //blue
-          color3: 'rgba(255, 255, 0)',  //yellow
-          color4: 'rgba(255, 0, 0)',    //red
-          color5: 'rgba(0, 0, 0)'       //black
-        };
+
 
         var dataset = barChart.data.datasets[0];
         for (var i = 0; i < dataset.data.length; i++) {
@@ -807,7 +810,73 @@
         // END LINE CHART NO2
 
       })
-      
+
+      /*======================= GMAP API ========================== */
+
+      //pengkondisian warna circle Sensor Node A untuk CO2
+      if((70 >= 0) && (70 <= 50)){
+        var colorCO2 = chartColors.color1;
+      } else if ((70 >= 51 ) && (70 <= 100)) {
+        var colorCO2 = chartColors.color2;
+      } else if ((70 >= 101) && (70 <= 199)) {
+        var colorCO2 = chartColors.color3;
+      } else if ((70 >= 200) && (70 <= 299)) {
+        var colorCO2 = chartColors.color4;
+      } else {
+        var colorCO2 = chartColors.color5;
+      }
+
+      //pengkondisian warna circle Sensor Node B untuk O3
+      if((20 >= 0) && (20 <= 50)){
+        var colorO3 = chartColors.color1;
+      } else if ((20 >= 51 ) && (20 <= 100)) {
+        var colorO3 = chartColors.color2;
+      } else if ((20 >= 101) && (20 <= 199)) {
+        var colorO3 = chartColors.color3;
+      } else if ((20 >= 200) && (20 <= 299)) {
+        var colorO3 = chartColors.color4;
+      } else {
+        var colorO3 = chartColors.color5;
+      }
+
+      //pengkondisian warna circle sensor node C untuk NO2
+      if(({{ $data->payloadtotal }} >= 0) && ({{ $data->payloadtotal }} <= 50)){
+        var colorNO2 = chartColors.color1;
+      } else if (({{ $data->payloadtotal }} >= 51 ) && ({{ $data->payloadtotal }} <= 100)) {
+        var colorNO2 = chartColors.color2;
+      } else if (({{ $data->payloadtotal }} >= 101) && ({{ $data->payloadtotal }} <= 199)) {
+        var colorNO2 = chartColors.color3;
+      } else if (({{ $data->payloadtotal }} >= 200) && ({{ $data->payloadtotal }} <= 299)) {
+        var colorNO2 = chartColors.color4;
+      } else {
+        var colorNO2 = chartColors.color5;
+      }
+
+       //pengkondisian warna circle Sensor Node D untuk SO2
+       if((150 >= 0) && (150 <= 50)){
+        var colorSO2 = chartColors.color1;
+      } else if ((150 >= 51 ) && (150 <= 100)) {
+        var colorSO2 = chartColors.color2;
+      } else if ((150 >= 101) && (150 <= 199)) {
+        var colorSO2 = chartColors.color3;
+      } else if ((150 >= 200) && (150 <= 299)) {
+        var colorSO2 = chartColors.color4;
+      } else {
+        var colorSO2 = chartColors.color5;
+      }
+
+       //pengkondisian warna circle Sensor Node E untuk PM10
+       if((330 >= 0) && (330 <= 50)){
+        var colorPM10 = chartColors.color1;
+      } else if ((330 >= 51 ) && (330 <= 100)) {
+        var colorPM10 = chartColors.color2;
+      } else if ((330 >= 101) && (330 <= 199)) {
+        var colorPM10 = chartColors.color3;
+      } else if ((330 >= 200) && (330 <= 299)) {
+        var colorPM10 = chartColors.color4;
+      } else {
+        var colorPM10 = chartColors.color5;
+      }
 
       /* GMAP API FOR SENSOR LOCATION */
       var nodePoints = {};
@@ -825,7 +894,8 @@
               "<p>keterangan : </p>" +
               "</div>" +
               "</div>",
-        magnitude: 40
+        magnitude: 40,
+        color: colorCO2
       };
 
       nodePoints[1] = {
@@ -841,7 +911,8 @@
               "<p>keterangan : </p>" +
               "</div>" +
               "</div>",
-        magnitude: 40
+        magnitude: 40,
+        color: colorO3
       };
 
       nodePoints[2] = {
@@ -858,6 +929,7 @@
               "</div>" +
               "</div>",
         magnitude: 40,
+        color: colorNO2
       };
 
       nodePoints[3] = {
@@ -873,7 +945,8 @@
               "<p>keterangan : </p>" +
               "</div>" +
               "</div>",
-        magnitude: 40
+        magnitude: 40,
+        color: colorSO2
       };
 
       nodePoints[4] = {
@@ -889,7 +962,8 @@
               "<p>keterangan : </p>" +
               "</div>" +
               "</div>",
-        magnitude: 40
+        magnitude: 40,
+        color: colorPM10
       };
 
       var nodeCircle;
@@ -909,7 +983,7 @@
             strokeColor: "#00B01D",
             strokeOpacity: 0.8,
             strokeWeight: 0,
-            fillColor: "#00B01D",
+            fillColor: nodePoints[i].color,
             fillOpacity: 0.35,
             map: map,
             center: nodePoints[i].center,
@@ -932,4 +1006,5 @@
       } 
       google.maps.event.addDomListener(window, 'load', initialize);
     </script>
+
 @endsection
