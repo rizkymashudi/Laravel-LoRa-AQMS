@@ -26,22 +26,6 @@
           <!-- /.col (LEFT) -->
           <div class="col">
           
-            <!-- MAP -->
-            <div class="card card-dark">
-              <div class="card-header">
-                <h3 class="card-title">Lokasi Sensor</h3>
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
-                </div>
-              </div>
-              <div class="card-body">
-                <div class="map">
-                  <div class="border border-dark" id="map" style="width: auto; height: 350px;"></div>
-                </div>
-              </div>
-            </div>
-
-
             <!-- BAR CHART -->
             <div class="card card-dark">
               <div class="card-header">
@@ -102,34 +86,55 @@
               <!-- /.card-body -->
             </div>
 
-
-            <!-- GRAFIK PM10 -->
-            <div class="card card-dark">
-              <div class="card-header">
-                <h3 class="card-title">Grafik PM<sub>10</sub></h3>
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
-                </div>
-              </div>
-              <div class="card-body">
-                <div class="chart">
-                  <canvas id="lineChartPM" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-                </div>
-                <div class="container">
-                  <div class="row">
-                    <div class="col text-center">
-                      <table border="0" style="margin:auto; margin-top:auto; margin-bottom:auto; height:15px;">
-                        <tr>
-                          <td valign="middle"><p style="margin:auto; font-size:15px;">Particulate Matter, PM<sub>10</sub> (Periode Pengukuran Rata-rata 24 Jam) &#181;g / m<sup>3</sup></p></td>
-                        </tr>
-                      </table>
+            <div class="row">
+              <div class="col-md-6">
+                <!-- MAP -->
+                <div class="card card-dark">
+                  <div class="card-header">
+                    <h3 class="card-title">Lokasi Sensor</h3>
+                    <div class="card-tools">
+                      <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="map">
+                      <div class="border border-dark" id="map" style="width: auto; height: 274px;"></div>
                     </div>
                   </div>
                 </div>
+
               </div>
-              <!-- /.card-body -->
+              <div class="col-md-6">
+                <!-- GRAFIK PM10 -->
+                <div class="card card-dark">
+                  <div class="card-header">
+                    <h3 class="card-title">Grafik PM<sub>10</sub></h3>
+                    <div class="card-tools">
+                      <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="chart">
+                      <canvas id="lineChartPM" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                    </div>
+                    <div class="container">
+                      <div class="row">
+                        <div class="col text-center">
+                          <table border="0" style="margin:auto; margin-top:auto; margin-bottom:auto; height:15px;">
+                            <tr>
+                              <td valign="middle"><p style="margin:auto; font-size:15px;">Particulate Matter, PM<sub>10</sub> (Periode Pengukuran Rata-rata 24 Jam) &#181;g / m<sup>3</sup></p></td>
+                            </tr>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /.card-body -->
+                </div>
+                <!-- END GRAFIK PM10 -->
+              </div>
             </div>
-            <!-- END GRAFIK PM10 -->
+            
 
             <!-- GRAFIK PER PARTIKULAT -->
             <div class="row">
@@ -916,6 +921,7 @@
         nodeCircle = new google.maps.Circle(magnitudeOptions);
 
         google.maps.event.addListener(nodeCircle, 'click', (function(nodeCircle, i) {
+          console.log('aaa');
           return function(){
             infoWindow.setContent(nodePoints[i].addr);
             infoWindow.setPosition(nodeCircle.getCenter());
