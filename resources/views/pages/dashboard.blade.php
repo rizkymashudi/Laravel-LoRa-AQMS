@@ -811,7 +811,35 @@
 
       })
 
+
       /*======================= GMAP API ========================== */
+      //variable Partikel udara
+      // variable PM10
+      var PM  = 'PM'
+        var satu = "\u2081" //unicode 1
+        var nol = "\u2080"  //unicode 0
+        var PM10 = PM+satu+nol
+
+        // variable SO2
+        var SO = 'SO'
+        var dua= '\u2082' //unicode 2
+        var SO2= SO+dua
+
+        // variable CO2
+        var CO = 'CO'
+        var two= '\u2082' //unicode 2
+        var CO2=  CO+two
+
+        // variable O3
+        var O = "O"
+        var tiga = "\u2083" //unicode 3
+        var O3 = O+tiga
+
+        // variable NO2
+        var NO = "NO"
+        var loro = "\u2082" //unicode 2
+        var NO2 = NO+loro
+
 
       //pengkondisian warna circle Sensor Node A untuk CO2
       if((70 >= 0) && (70 <= 50)){
@@ -878,6 +906,7 @@
         var colorPM10 = chartColors.color5;
       }
 
+
       /* GMAP API FOR SENSOR LOCATION */
       var nodePoints = {};
 
@@ -889,7 +918,7 @@
               "</div>" +
               '<h5 id="firstHeading" class="firstHeading">Sensor Node A</h5>' +
               '<div id="bodyContent">' +
-              "<p>partikel udara : </p>" +
+              "<p>partikel udara : "+ CO2 +"</p>" +
               "<p>Kadar ISPU : </p>" +
               "<p>keterangan : </p>" +
               "</div>" +
@@ -906,7 +935,7 @@
               "</div>" +
               '<h5 id="firstHeading" class="firstHeading">Sensor Node B</h5>' +
               '<div id="bodyContent">' +
-              "<p>partikel udara : </p>" +
+              "<p>partikel udara : "+ O3 +"</p>" +
               "<p>Kadar ISPU : </p>" +
               "<p>keterangan : </p>" +
               "</div>" +
@@ -923,8 +952,8 @@
               "</div>" +
               '<h5 id="firstHeading" class="firstHeading">Sensor Node C</h5>' +
               '<div id="bodyContent">' +
-              "<p>partikel udara : </p>" +
-              "<p>Kadar ISPU : </p>" +
+              "<p>partikel udara : "+ NO2 +"</p>" +
+              "<p>Kadar ISPU : {{ $data->payloadtotal }}</p>" +
               "<p>keterangan : </p>" +
               "</div>" +
               "</div>",
@@ -940,7 +969,7 @@
               "</div>" +
               '<h5 id="firstHeading" class="firstHeading">Sensor Node D</h5>' +
               '<div id="bodyContent">' +
-              "<p>partikel udara : </p>" +
+              "<p>partikel udara : "+ SO2 +"</p>" +
               "<p>Kadar ISPU : </p>" +
               "<p>keterangan : </p>" +
               "</div>" +
@@ -957,7 +986,7 @@
               "</div>" +
               '<h5 id="firstHeading" class="firstHeading">Sensor Node E</h5>' +
               '<div id="bodyContent">' +
-              "<p>partikel udara : </p>" +
+              "<p>partikel udara : "+ PM10 +"</p>" +
               "<p>Kadar ISPU : </p>" +
               "<p>keterangan : </p>" +
               "</div>" +
