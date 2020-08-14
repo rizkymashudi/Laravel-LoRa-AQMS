@@ -25,6 +25,22 @@
         <div class="row">
           <!-- /.col (LEFT) -->
           <div class="col">
+          
+            <!-- MAP -->
+            <div class="card card-dark">
+              <div class="card-header">
+                <h3 class="card-title">Lokasi Sensor</h3>
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="map">
+                  <div class="border border-dark" id="map" style="width: auto; height: 350px;"></div>
+                </div>
+              </div>
+            </div>
+
 
             <!-- BAR CHART -->
             <div class="card card-dark">
@@ -786,7 +802,128 @@
         // END LINE CHART NO2
 
       })
-        
+      
 
+      /* GMAP API FOR SENSOR LOCATION */
+      var nodePoints = {};
+
+      nodePoints[0] = {
+        center: new google.maps.LatLng(1.119679, 104.048445),
+        id: 0,
+        addr: '<div id="content">' +
+              '<div id="siteNotice">' +
+              "</div>" +
+              '<h5 id="firstHeading" class="firstHeading">Sensor Node A</h5>' +
+              '<div id="bodyContent">' +
+              "<p>partikel udara : </p>" +
+              "<p>Kadar ISPU : </p>" +
+              "<p>keterangan : </p>" +
+              "</div>" +
+              "</div>",
+        magnitude: 40
+      };
+
+      nodePoints[1] = {
+        center: new google.maps.LatLng(1.119758, 104.049405),
+        id: 1,
+        addr: '<div id="content">' +
+              '<div id="siteNotice">' +
+              "</div>" +
+              '<h5 id="firstHeading" class="firstHeading">Sensor Node B</h5>' +
+              '<div id="bodyContent">' +
+              "<p>partikel udara : </p>" +
+              "<p>Kadar ISPU : </p>" +
+              "<p>keterangan : </p>" +
+              "</div>" +
+              "</div>",
+        magnitude: 40
+      };
+
+      nodePoints[2] = {
+        center: new google.maps.LatLng(1.118752, 104.050337),
+        id: 2,
+        addr: '<div id="content">' +
+              '<div id="siteNotice">' +
+              "</div>" +
+              '<h5 id="firstHeading" class="firstHeading">Sensor Node C</h5>' +
+              '<div id="bodyContent">' +
+              "<p>partikel udara : </p>" +
+              "<p>Kadar ISPU : </p>" +
+              "<p>keterangan : </p>" +
+              "</div>" +
+              "</div>",
+        magnitude: 40,
+      };
+
+      nodePoints[3] = {
+        center: new google.maps.LatLng(1.118869, 104.047097),
+        id: 3,
+        addr: '<div id="content">' +
+              '<div id="siteNotice">' +
+              "</div>" +
+              '<h5 id="firstHeading" class="firstHeading">Sensor Node D</h5>' +
+              '<div id="bodyContent">' +
+              "<p>partikel udara : </p>" +
+              "<p>Kadar ISPU : </p>" +
+              "<p>keterangan : </p>" +
+              "</div>" +
+              "</div>",
+        magnitude: 40
+      };
+
+      nodePoints[4] = {
+        center: new google.maps.LatLng(1.117819, 104.047335),
+        id: 4,
+        addr: '<div id="content">' +
+              '<div id="siteNotice">' +
+              "</div>" +
+              '<h5 id="firstHeading" class="firstHeading">Sensor Node E</h5>' +
+              '<div id="bodyContent">' +
+              "<p>partikel udara : </p>" +
+              "<p>Kadar ISPU : </p>" +
+              "<p>keterangan : </p>" +
+              "</div>" +
+              "</div>",
+        magnitude: 40
+      };
+
+      var nodeCircle;
+      var infoWindow = new google.maps.InfoWindow();
+      
+      function initialize(){
+        var mapOptions = {
+          zoom: 17,
+          center: new google.maps.LatLng(1.118709, 104.048585),
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+
+        var map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+        for (i in nodePoints) {
+          var magnitudeOptions = {
+            strokeColor: "#00B01D",
+            strokeOpacity: 0.8,
+            strokeWeight: 0,
+            fillColor: "#00B01D",
+            fillOpacity: 0.35,
+            map: map,
+            center: nodePoints[i].center,
+            radius: nodePoints[i].magnitude,
+            id:nodePoints[i].id,
+            addr:nodePoints[i].addr,
+            infoWindowIndex: i
+          };
+        nodeCircle = new google.maps.Circle(magnitudeOptions);
+
+        google.maps.event.addListener(nodeCircle, 'click', (function(nodeCircle, i) {
+          return function(){
+            infoWindow.setContent(nodePoints[i].addr);
+            infoWindow.setPosition(nodeCircle.getCenter());
+            infoWindow.open(map);
+          }
+        })(nodeCircle, i));
+        }
+      } 
+      google.maps.event.addDomListener(window, 'load', initialize);
     </script>
 @endsection

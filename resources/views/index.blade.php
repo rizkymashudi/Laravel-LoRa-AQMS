@@ -34,6 +34,12 @@
     <script src="{{ url('AdminLTE/plugins/jquery/jquery.min.js') }}"></script>
     <!-- jQuery UI 1.11.4 -->
     <script src="{{ url('AdminLTE/plugins/jquery-ui/jquery-ui.min.js') }}"></script>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    {{-- <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCD4JTzve2Q6-tquziaP7Gv7o-4_Yzd0aY&callback=initMap"></script> --}}
+    {{-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCD4JTzve2Q6-tquziaP7Gv7o-4_Yzd0aY&callback=initMap&libraries=&v=weekly" defer></script> --}}
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    {{-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script> --}}
     
   </head>
 
