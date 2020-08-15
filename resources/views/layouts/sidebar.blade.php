@@ -47,14 +47,14 @@
         </a>
       </li>
  
-      <li class="nav-item">
+      {{-- <li class="nav-item">
         <a href="{{ route('Misc') }}" class="nav-link {{ Request::is('Misc') ? 'active' : null }}">
           <i class="nav-icon fas fa-file"></i>
           <p>
             Blank Page
           </p>
         </a>
-      </li>
+      </li> --}}
       
       <li class="nav-item">
         <a href="{{ route('About') }}" class="nav-link {{ Request::is('About') ? 'active' : null }}">

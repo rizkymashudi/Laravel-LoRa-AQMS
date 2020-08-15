@@ -773,94 +773,119 @@
       //variable Partikel udara
       // variable PM10
       var PM  = 'PM'
-        var satu = "\u2081" //unicode 1
-        var nol = "\u2080"  //unicode 0
-        var PM10 = PM+satu+nol
+      var satu = "\u2081" //unicode 1
+      var nol = "\u2080"  //unicode 0
+      var PM10 = PM+satu+nol
 
-        // variable SO2
-        var SO = 'SO'
-        var dua= '\u2082' //unicode 2
-        var SO2= SO+dua
+      // variable SO2
+      var SO = 'SO'
+      var dua= '\u2082' //unicode 2
+      var SO2= SO+dua
 
-        // variable CO2
-        var CO = 'CO'
-        var two= '\u2082' //unicode 2
-        var CO2=  CO+two
+      // variable CO2
+      var CO = 'CO'
+      var two= '\u2082' //unicode 2
+      var CO2=  CO+two
 
-        // variable O3
-        var O = "O"
-        var tiga = "\u2083" //unicode 3
-        var O3 = O+tiga
+      // variable O3
+      var O = "O"
+      var tiga = "\u2083" //unicode 3
+      var O3 = O+tiga
 
-        // variable NO2
-        var NO = "NO"
-        var loro = "\u2082" //unicode 2
-        var NO2 = NO+loro
+      // variable NO2
+      var NO = "NO"
+      var loro = "\u2082" //unicode 2
+      var NO2 = NO+loro
 
 
       //pengkondisian warna circle Sensor Node A untuk CO2
       if((70 >= 0) && (70 <= 50)){
         var colorCO2 = chartColors.color1;
+        var indicationCO2 = 'Baik';
       } else if ((70 >= 51 ) && (70 <= 100)) {
         var colorCO2 = chartColors.color2;
+        var indicationCO2 = 'Sedang';
       } else if ((70 >= 101) && (70 <= 199)) {
         var colorCO2 = chartColors.color3;
+        var indicationCO2 = 'Tidak sehat';
       } else if ((70 >= 200) && (70 <= 299)) {
         var colorCO2 = chartColors.color4;
+        var indicationCO2 = 'Sangat tidak sehat';
       } else {
         var colorCO2 = chartColors.color5;
+        var indicationCO2 = 'Berbahaya';
       }
 
       //pengkondisian warna circle Sensor Node B untuk O3
       if(({{ $dataO3 }} >= 0) && ({{ $dataO3 }} <= 50)){
         var colorO3 = chartColors.color1;
+        var indicationO3 = 'Baik';
       } else if (({{ $dataO3 }} >= 51 ) && ({{ $dataO3 }} <= 100)) {
         var colorO3 = chartColors.color2;
+        var indicationO3= 'Sedang';
       } else if (({{ $dataO3 }} >= 101) && ({{ $dataO3 }} <= 199)) {
         var colorO3 = chartColors.color3;
+        var indicationO3 = 'Tidak sehat';
       } else if (({{ $dataO3 }} >= 200) && ({{ $dataO3 }} <= 299)) {
         var colorO3 = chartColors.color4;
+        var indicationO3 = 'Sangat tidak sehat';
       } else {
         var colorO3 = chartColors.color5;
+        var indicationO3 = 'Berbahaya';
       }
 
       //pengkondisian warna circle sensor node C untuk NO2
       if(({{ $dataNO2->payloadtotal }} >= 0) && ({{ $dataNO2->payloadtotal }} <= 50)){
         var colorNO2 = chartColors.color1;
+        var indicationNO2 = 'Baik';
       } else if (({{ $dataNO2->payloadtotal }} >= 51 ) && ({{ $dataNO2->payloadtotal }} <= 100)) {
         var colorNO2 = chartColors.color2;
+        var indicationNO2 = 'Sedang';
       } else if (({{ $dataNO2->payloadtotal }} >= 101) && ({{ $dataNO2->payloadtotal }} <= 199)) {
         var colorNO2 = chartColors.color3;
+        var indicationNO2 = 'Tidak sehat';
       } else if (({{ $dataNO2->payloadtotal }} >= 200) && ({{ $dataNO2->payloadtotal }} <= 299)) {
         var colorNO2 = chartColors.color4;
+        var indicationNO2 = 'Sangat tidak sehat';
       } else {
         var colorNO2 = chartColors.color5;
+        var indicationNO2 = 'Berbahaya';
       }
 
        //pengkondisian warna circle Sensor Node D untuk SO2
        if((150 >= 0) && (150 <= 50)){
         var colorSO2 = chartColors.color1;
+        var indicationSO2 = 'Baik';
       } else if ((150 >= 51 ) && (150 <= 100)) {
         var colorSO2 = chartColors.color2;
+        var indicationSO2 = 'Sedang';
       } else if ((150 >= 101) && (150 <= 199)) {
         var colorSO2 = chartColors.color3;
+        var indicationSO2 = 'Tidak sehat';
       } else if ((150 >= 200) && (150 <= 299)) {
         var colorSO2 = chartColors.color4;
+        var indicationSO2 = 'Sangat tidak sehat';
       } else {
         var colorSO2 = chartColors.color5;
+        var indicationSO2 = 'Berbahaya';
       }
 
        //pengkondisian warna circle Sensor Node E untuk PM10
        if((330 >= 0) && (330 <= 50)){
         var colorPM10 = chartColors.color1;
+        var indicationPM10 = 'Baik';
       } else if ((330 >= 51 ) && (330 <= 100)) {
         var colorPM10 = chartColors.color2;
+        var indicationPM10 = 'Sedang';
       } else if ((330 >= 101) && (330 <= 199)) {
         var colorPM10 = chartColors.color3;
+        var indicationPM10 = 'Tidak sehat';
       } else if ((330 >= 200) && (330 <= 299)) {
         var colorPM10 = chartColors.color4;
+        var indicationPM10 = 'Sangat tidak sehat';
       } else {
         var colorPM10 = chartColors.color5;
+        var indicationPM10 = 'Bebahaya';
       }
 
 
@@ -877,7 +902,7 @@
               '<div id="bodyContent">' +
               "Partikel udara : "+ CO2 +"<br>" +
               "Kadar ISPU : <br>" +
-              "keterangan : <br>" +
+              "keterangan : "+ indicationCO2 +"<br>" +
               "</div>" +
               "</div>",
         magnitude: 40,
@@ -894,7 +919,7 @@
               '<div id="bodyContent">' +
               "Partikel udara : "+ O3 +"<br>" +
               "Kadar ISPU : {{ $dataO3 }}<br>" +
-              "keterangan : <br>" +
+              "keterangan : "+ indicationO3 +"<br>" +
               "</div>" +
               "</div>",
         magnitude: 40,
@@ -911,7 +936,7 @@
               '<div id="bodyContent">' +
               "Partikel udara : "+ NO2 +"<br>" +
               "Kadar ISPU : {{ $dataNO2->payloadtotal }}<br>" +
-              "keterangan : <br>" +
+              "keterangan : "+ indicationNO2 +"<br>" +
               "</div>" +
               "</div>",
         magnitude: 40,
@@ -928,7 +953,7 @@
               '<div id="bodyContent">' +
               "Partikel udara : "+ SO2 +"<br>" +
               "Kadar ISPU : <br>" +
-              "keterangan : <br>" +
+              "keterangan : "+ indicationSO2 +"<br>" +
               "</div>" +
               "</div>",
         magnitude: 40,
@@ -945,7 +970,7 @@
               '<div id="bodyContent">' +
               "Partikel udara : "+ PM10 +"<br>" +
               "Kadar ISPU : <br>" +
-              "keterangan : <br>" +
+              "keterangan : "+ indicationPM10 +"<br>" +
               "</div>" +
               "</div>",
         magnitude: 40,
@@ -978,6 +1003,7 @@
             addr:nodePoints[i].addr,
             infoWindowIndex: i
           };
+
         nodeCircle = new google.maps.Circle(magnitudeOptions);
 
         google.maps.event.addListener(nodeCircle, 'click', (function(nodeCircle, i) {
