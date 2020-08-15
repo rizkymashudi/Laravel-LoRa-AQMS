@@ -11,9 +11,11 @@ class componentController extends Controller
 {
     public function index(){
         
-        $data  = DB::table('partikel')
+        $dataNO2  = DB::table('partikel')
                 ->select(DB::raw('SUM(payload) as payloadtotal'))
                 ->first();
-        return view('pages.dashboard', compact('data'));
+        
+        $dataO3 = 250;
+        return view('pages.dashboard', compact('dataNO2', 'dataO3'));
     }
 }

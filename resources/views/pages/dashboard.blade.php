@@ -98,8 +98,17 @@
                   </div>
                   <div class="card-body">
                     <div class="map">
-                      <div class="border border-dark" id="map" style="width: auto; height: 274px;"></div>
+                      <div id="map" style="width: auto; height: 300px;"></div>
                     </div>
+                    {{-- <div class="container border border-dark" style="margin-top: 5px;">
+                      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 border border-dark">
+                        <div class="col-xs-1 text-center"><p style="margin:auto; font-size:13px;">Baik</p></div>
+                        <div class="col-xs-1 text-center"><p style="margin:auto; font-size:13px;">Sedang</p></div>
+                        <div class="col-xs-1 text-center"><p style="margin:auto; font-size:13px;">Tidak sehat</p></div>
+                        <div class="col-xs-1 text-center"><p style="margin:auto; font-size:13px;">Sangat tidak sehat</p></div>
+                        <div class="col-xs-1 text-center"><p style="margin:auto; font-size:13px;">Berbahaya</p></div>
+                      </div>
+                    </div> --}}
                   </div>
                 </div>
 
@@ -113,7 +122,7 @@
                       <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
                     </div>
                   </div>
-                  <div class="card-body">
+                  <div class="card-body" style="height: 340px;">
                     <div class="chart">
                       <canvas id="lineChartPM" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                     </div>
@@ -122,7 +131,7 @@
                         <div class="col text-center">
                           <table border="0" style="margin:auto; margin-top:auto; margin-bottom:auto; height:15px;">
                             <tr>
-                              <td valign="middle"><p style="margin:auto; font-size:15px;">Particulate Matter, PM<sub>10</sub> (Periode Pengukuran Rata-rata 24 Jam) &#181;g / m<sup>3</sup></p></td>
+                              <td valign="middle"><p style="margin:auto; font-size:15px;">Particulate Matter, PM<sub>10</sub> (Periode Pengukuran Rata-rata 1 Jam) &#181;g / m<sup>3</sup></p></td>
                             </tr>
                           </table>
                         </div>
@@ -156,7 +165,7 @@
                         <div class="col text-center">
                           <table border="0" style="margin:auto; margin-top:auto; margin-bottom:auto; height:15px;">
                             <tr>
-                              <td valign="middle"><p style="margin:auto; font-size:15px;">Sulfur Dioksida, SO<sub>2</sub> (Periode Pengukuran Rata-rata 24 Jam) &#181;g / m<sup>3</sup></p></td>
+                              <td valign="middle"><p style="margin:auto; font-size:15px;">Sulfur Dioksida, SO<sub>2</sub> (Periode Pengukuran Rata-rata 1 Jam) &#181;g / m<sup>3</sup></p></td>
                             </tr>
                           </table>
                         </div>
@@ -185,7 +194,7 @@
                         <div class="col text-center">
                           <table border="0" style="margin:auto; margin-top:auto; margin-bottom:auto; height:15px;">
                             <tr>
-                              <td valign="middle"><p style="margin:auto; font-size:15px;">Carbon monoksida, CO<sub>2</sub> (Periode Pengukuran Rata-rata 8 Jam) &#181;g / m<sup>3</sup></p></td>
+                              <td valign="middle"><p style="margin:auto; font-size:15px;">Carbon monoksida, CO<sub>2</sub> (Periode Pengukuran Rata-rata 1 Jam) &#181;g / m<sup>3</sup></p></td>
                             </tr>
                           </table>
                         </div>
@@ -260,9 +269,6 @@
         <!-- /.row -->
       </div><!-- /.container-fluid -->
 
-
-     
-      
     </section>
 
     <style>
@@ -271,7 +277,14 @@
           height: 10px;
           border-radius: 0.1rem;
       }
+
+      .circle{
+          width: 10px;
+          height: 10px;
+          border-radius: 1rem;
+      }
     </style>
+
     <script>
 
       var chartColors = {
@@ -332,7 +345,7 @@
               pointStrokeColor    : 'rgba(60,141,188,1)',
               pointHighlightFill  : '#fff',
               pointHighlightStroke: 'rgba(60,141,188,1)',
-              data                : [330, 150, 70, 20, {{ $data->payloadtotal }}]
+              data                : [330, 150, 70, {{ $dataO3 }}, {{ $dataNO2->payloadtotal }}]
             }
           ]
         }
@@ -342,8 +355,7 @@
         var temp0 = areaChartData.datasets[0]
         barChartData.datasets[0] = temp0
         
-        
-        
+      
         var barChartOptions = {
           responsive              : true,
           maintainAspectRatio     : false,
@@ -494,7 +506,7 @@
               pointBorderWidth    : 3,
               fill                : false,
               lineTension         : 0,
-              data                : [{{ $data->payloadtotal }}, 150, 70, 20, 330, 80, 43]
+              data                : [{{ $dataNO2->payloadtotal }}, 150, 70, 20, 330, 80, 43]
             }
           ]
         }
@@ -539,7 +551,7 @@
         //- LINE CHART SO2 -
         //------------------
         var lineChartSOData = {
-          labels  : [ 'senin', 'selasa', 'rabu', 'kamis', 'jumat', 'sabtu', 'minggu'],
+          labels  : [ '01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00', '00:00'],
           datasets: [
             {
               label               : SO2,
@@ -547,7 +559,7 @@
               pointBorderWidth    : 3,
               fill                : false,
               lineTension         : 0,
-              data                : [{{ $data->payloadtotal }}, 150, 70, 20, 330, 80, 43]
+              data                : [{{ $dataNO2->payloadtotal }}, 150, 70, 20, 330, 80, 43]
             }
           ]
         }
@@ -601,7 +613,7 @@
               pointBorderWidth    : 3,
               fill                : false,
               lineTension         : 0,
-              data                : [{{ $data->payloadtotal }}, 150, 70, 20, 330, 80, 43]
+              data                : [{{ $dataNO2->payloadtotal }}, 150, 70, 20, 330, 80, 43]
             }
           ]
         }
@@ -642,65 +654,10 @@
 
 
         //------------------
-        //- LINE CHART SO2 -
-        //------------------
-        var lineChartSOData = {
-          labels  : [ 'senin', 'selasa', 'rabu', 'kamis', 'jumat', 'sabtu', 'minggu'],
-          datasets: [
-            {
-              label               : SO2,
-              borderColor         : 'rgba(52, 189, 235)',
-              pointBorderWidth    : 3,
-              fill                : false,
-              lineTension         : 0,
-              data                : [{{ $data->payloadtotal }}, 150, 70, 20, 330, 80, 43]
-            }
-          ]
-        }
-        
-        var lineChartSO = $('#lineChartSO').get(0).getContext('2d')
-        var chartSOData = jQuery.extend(true, {}, lineChartSOData)
-        var temp4       = lineChartSOData.datasets[0]
-        chartSOData.datasets[0] = temp4
-
-
-        var SOChartOptions = {
-          responsive              : true,
-          maintainAspectRatio     : false,
-          datasetFill             : false,
-          scales: {
-              yAxes: [{
-                display: true,
-                stacked: true,
-                ticks: {
-                  min : 0,
-                  max : 500,
-                  stepSize : 100
-                },
-                scaleLabel: {
-                  display: true,
-                  labelString: 'ISPU'
-                }
-              }],
-              // xAxes: [{
-              //   barPercentage: 0.4
-              // }]
-          }
-        }
-
-        var myLineChartSO = new Chart(lineChartSO, {
-            type: 'line',
-            data: chartSOData,
-            options: SOChartOptions
-        });
-        // END LINE CHART SO2
-
-
-        //------------------
         //- LINE CHART O3  -
         //------------------
         var lineChartOData = {
-          labels  : [ 'senin', 'selasa', 'rabu', 'kamis', 'jumat', 'sabtu', 'minggu'],
+          labels  : [ '01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00', '00:00'],
           datasets: [
             {
               label               : O3,
@@ -708,7 +665,7 @@
               pointBorderWidth    : 3,
               fill                : false,
               lineTension         : 0,
-              data                : [{{ $data->payloadtotal }}, 150, 70, 20, 330, 80, 43]
+              data                : [{{ $dataNO2->payloadtotal }}, 150, 70, 20, 330, 80, 43]
             }
           ]
         }
@@ -757,7 +714,7 @@
         //------------------
 
         var lineChartNOData = {
-          labels  : [ 'senin', 'selasa', 'rabu', 'kamis', 'jumat', 'sabtu', 'minggu'],
+          labels  : [ '01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00', '00:00'],
           datasets: [
             {
               label               : NO2,
@@ -765,7 +722,7 @@
               pointBorderWidth    : 3,
               fill                : false,
               lineTension         : 0,
-              data                : [{{ $data->payloadtotal }}, 150, 70, 20, 330, 80, 43]
+              data                : [{{ $dataNO2->payloadtotal }}, 150, 70, 20, 330, 80, 43]
             }
           ]
         }
@@ -855,26 +812,26 @@
       }
 
       //pengkondisian warna circle Sensor Node B untuk O3
-      if((20 >= 0) && (20 <= 50)){
+      if(({{ $dataO3 }} >= 0) && ({{ $dataO3 }} <= 50)){
         var colorO3 = chartColors.color1;
-      } else if ((20 >= 51 ) && (20 <= 100)) {
+      } else if (({{ $dataO3 }} >= 51 ) && ({{ $dataO3 }} <= 100)) {
         var colorO3 = chartColors.color2;
-      } else if ((20 >= 101) && (20 <= 199)) {
+      } else if (({{ $dataO3 }} >= 101) && ({{ $dataO3 }} <= 199)) {
         var colorO3 = chartColors.color3;
-      } else if ((20 >= 200) && (20 <= 299)) {
+      } else if (({{ $dataO3 }} >= 200) && ({{ $dataO3 }} <= 299)) {
         var colorO3 = chartColors.color4;
       } else {
         var colorO3 = chartColors.color5;
       }
 
       //pengkondisian warna circle sensor node C untuk NO2
-      if(({{ $data->payloadtotal }} >= 0) && ({{ $data->payloadtotal }} <= 50)){
+      if(({{ $dataNO2->payloadtotal }} >= 0) && ({{ $dataNO2->payloadtotal }} <= 50)){
         var colorNO2 = chartColors.color1;
-      } else if (({{ $data->payloadtotal }} >= 51 ) && ({{ $data->payloadtotal }} <= 100)) {
+      } else if (({{ $dataNO2->payloadtotal }} >= 51 ) && ({{ $dataNO2->payloadtotal }} <= 100)) {
         var colorNO2 = chartColors.color2;
-      } else if (({{ $data->payloadtotal }} >= 101) && ({{ $data->payloadtotal }} <= 199)) {
+      } else if (({{ $dataNO2->payloadtotal }} >= 101) && ({{ $dataNO2->payloadtotal }} <= 199)) {
         var colorNO2 = chartColors.color3;
-      } else if (({{ $data->payloadtotal }} >= 200) && ({{ $data->payloadtotal }} <= 299)) {
+      } else if (({{ $dataNO2->payloadtotal }} >= 200) && ({{ $dataNO2->payloadtotal }} <= 299)) {
         var colorNO2 = chartColors.color4;
       } else {
         var colorNO2 = chartColors.color5;
@@ -918,9 +875,9 @@
               "</div>" +
               '<h5 id="firstHeading" class="firstHeading">Sensor Node A</h5>' +
               '<div id="bodyContent">' +
-              "<p>partikel udara : "+ CO2 +"</p>" +
-              "<p>Kadar ISPU : </p>" +
-              "<p>keterangan : </p>" +
+              "Partikel udara : "+ CO2 +"<br>" +
+              "Kadar ISPU : <br>" +
+              "keterangan : <br>" +
               "</div>" +
               "</div>",
         magnitude: 40,
@@ -935,9 +892,9 @@
               "</div>" +
               '<h5 id="firstHeading" class="firstHeading">Sensor Node B</h5>' +
               '<div id="bodyContent">' +
-              "<p>partikel udara : "+ O3 +"</p>" +
-              "<p>Kadar ISPU : </p>" +
-              "<p>keterangan : </p>" +
+              "Partikel udara : "+ O3 +"<br>" +
+              "Kadar ISPU : {{ $dataO3 }}<br>" +
+              "keterangan : <br>" +
               "</div>" +
               "</div>",
         magnitude: 40,
@@ -952,9 +909,9 @@
               "</div>" +
               '<h5 id="firstHeading" class="firstHeading">Sensor Node C</h5>' +
               '<div id="bodyContent">' +
-              "<p>partikel udara : "+ NO2 +"</p>" +
-              "<p>Kadar ISPU : {{ $data->payloadtotal }}</p>" +
-              "<p>keterangan : </p>" +
+              "Partikel udara : "+ NO2 +"<br>" +
+              "Kadar ISPU : {{ $dataNO2->payloadtotal }}<br>" +
+              "keterangan : <br>" +
               "</div>" +
               "</div>",
         magnitude: 40,
@@ -969,9 +926,9 @@
               "</div>" +
               '<h5 id="firstHeading" class="firstHeading">Sensor Node D</h5>' +
               '<div id="bodyContent">' +
-              "<p>partikel udara : "+ SO2 +"</p>" +
-              "<p>Kadar ISPU : </p>" +
-              "<p>keterangan : </p>" +
+              "Partikel udara : "+ SO2 +"<br>" +
+              "Kadar ISPU : <br>" +
+              "keterangan : <br>" +
               "</div>" +
               "</div>",
         magnitude: 40,
@@ -986,9 +943,9 @@
               "</div>" +
               '<h5 id="firstHeading" class="firstHeading">Sensor Node E</h5>' +
               '<div id="bodyContent">' +
-              "<p>partikel udara : "+ PM10 +"</p>" +
-              "<p>Kadar ISPU : </p>" +
-              "<p>keterangan : </p>" +
+              "Partikel udara : "+ PM10 +"<br>" +
+              "Kadar ISPU : <br>" +
+              "keterangan : <br>" +
               "</div>" +
               "</div>",
         magnitude: 40,
@@ -1013,7 +970,7 @@
             strokeOpacity: 0.8,
             strokeWeight: 0,
             fillColor: nodePoints[i].color,
-            fillOpacity: 0.35,
+            fillOpacity: 0.5,
             map: map,
             center: nodePoints[i].center,
             radius: nodePoints[i].magnitude,
