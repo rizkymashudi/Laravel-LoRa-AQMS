@@ -22,7 +22,7 @@
               "Januari", "Febuari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"
             ],
             day = [
-              "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu"
+              "Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"
             ],
             date = new Date();
             date.setDate(date.getDate());
