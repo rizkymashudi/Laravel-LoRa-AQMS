@@ -4,37 +4,44 @@ namespace App\Helpers;
 class ISPU{
 
 
-    public function countISPU($xX){
+    // public function countISPU($xX){
 
-        /* ISPU BATAS ATAS DAN BATAS BAWAH */
-        //data refer pada table batas ISPU satuan SI
-        $ispuA = range(50, 100);
-        $ispuB = range(100, 200);
-        $ispuC = range(200, 300);
-        $ispuD = range(300, 400);
-        $ispuE = range(400, 500);
+    //     /* ISPU BATAS ATAS DAN BATAS BAWAH */
+    //     //data refer pada table batas ISPU satuan SI
+    //     $ispuA = range(50, 100);
+    //     $ispuB = range(100, 200);
+    //     $ispuC = range(200, 300);
+    //     $ispuD = range(300, 400);
+    //     $ispuE = range(400, 500);
 
-        /* penentuan ISPU batas atas dan ISPU batas bawah */
-        if(in_array($xX, $ispuA)):
-            $Ia = 100;
-            $Ib = 50;
-        elseif(in_array($xX, $ispuB)):
-            $Ia = 200;
-            $Ib = 100;
-        elseif(in_array($xX, $ispuC)):
-            $Ia = 300;
-            $Ib = 200;
-        elseif(in_array($xX, $ispuD)):
-            $Ia = 400;
-            $Ib = 300;
-        elseif(in_array($xX, $ispuE)):
-            $Ia = 500;
-            $Ib = 400;
-        else:
-            echo 'not found';
-        endif;
+    //     /* penentuan ISPU batas atas dan ISPU batas bawah */
+    //     if(in_array($xX, $ispuA)):
+    //         $Ia = 100;
+    //         $Ib = 50;
+    //     elseif(in_array($xX, $ispuB)):
+    //         $Ia = 200;
+    //         $Ib = 100;
+    //     elseif(in_array($xX, $ispuC)):
+    //         $Ia = 300;
+    //         $Ib = 200;
+    //     elseif(in_array($xX, $ispuD)):
+    //         $Ia = 400;
+    //         $Ib = 300;
+    //     elseif(in_array($xX, $ispuE)):
+    //         $Ia = 500;
+    //         $Ib = 400;
+    //     else:
+    //         echo 'not found';
+    //     endif;
 
-    }
+
+    //     /* HITUNG SATUAN SI */
+    //     $I = $Ia-$Ib / $Xa-$Xb ($Xx-$Xb) + $Ib;
+
+    //     return $I;
+
+
+    // }
 
     public function countPM($xX){
         
@@ -49,21 +56,33 @@ class ISPU{
         if(in_array($xX, $pmA)):
             $Xa = 150;
             $Xb = 50;
+            $Ia = 100;
+            $Ib = 50;
         elseif(in_array($xX, $pmB)):
             $Xa = 350;
             $Xb = 150;
+            $Ia = 200;
+            $Ib = 100;
         elseif(in_array($xX, $pmC)):
             $Xa = 420;
             $Xb = 350;
+            $Ia = 300;
+            $Ib = 200;
         elseif(in_array($xX, $pmD)):
             $Xa = 500;
             $Xb = 420;
+            $Ia = 400;
+            $Ib = 300;
         elseif(in_array($xX, $pmE)):
             $Xa = 600;
             $Xb = 500;
+            $Ia = 500;
+            $Ib = 400;
         else:
             echo 'not found';
         endif;
+
+        return array($Xa, $Xb);
     }
 
     public function countSO($xX){
@@ -79,21 +98,33 @@ class ISPU{
         if(in_array($xX, $soA)):
             $Xa = 365;
             $Xb = 80;
+            $Ia = 100;
+            $Ib = 50;
         elseif(in_array($xX, $soB)):
             $Xa = 800;
             $Xb = 365;
+            $Ia = 200;
+            $Ib = 100;
         elseif(in_array($xX, $soC)):
             $Xa = 1600;
             $Xb = 800;
+            $Ia = 300;
+            $Ib = 200;
         elseif(in_array($xX, $soD)):
             $Xa = 2100;
             $Xb = 1600;
+            $Ia = 400;
+            $Ib = 300;
         elseif(in_array($xX, $soE)):
             $Xa = 2620;
             $Xb = 2100;
+            $Ia = 500;
+            $Ib = 400;
         else:
             echo 'not found';
         endif;
+
+        return array($Xa, $Xb);
     }
 
     public function countCO($xX){
@@ -109,21 +140,33 @@ class ISPU{
         if(in_array($xX, $coA)):
             $Xa = 10;
             $Xb = 5;
+            $Ia = 100;
+            $Ib = 50;
         elseif(in_array($xX, $coB)):
             $Xa = 17;
             $Xb = 10;
+            $Ia = 200;
+            $Ib = 100;
         elseif(in_array($xX, $coC)):
             $Xa = 34;
             $Xb = 17;
+            $Ia = 300;
+            $Ib = 200;
         elseif(in_array($xX, $coD)):
             $Xa = 46;
             $Xb = 34;
+            $Ia = 400;
+            $Ib = 300;
         elseif(in_array($xX, $coE)):
             $Xa = 57.6;
             $Xb = 46;
+            $Ia = 500;
+            $Ib = 400;
         else:
             echo 'not found';
         endif;
+
+        return array($Xa, $Xb);
     }
 
     public function countO($xX){
@@ -139,6 +182,8 @@ class ISPU{
         if(in_array($xX, $oA)):
             $Xa = 235;
             $Xb = 120;
+            $Ia = 100;
+            $Ib = 50;
         elseif(in_array($xX, $oB)):
             $Xa = 400;
             $Xb = 235;
@@ -154,6 +199,8 @@ class ISPU{
         else:
             echo 'not found';
         endif;
+
+        return array($Xa, $Xb);
     }
 
     public function countNO($xX){
@@ -184,6 +231,8 @@ class ISPU{
         else:
             echo 'not found';
         endif;
+
+        return array($Xa, $Xb);
     }
 }
 ?>
