@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\partikulat;
+use App\nodeB;
 use DB;
 use App\Helpers\ISPU;
 
@@ -21,7 +22,7 @@ class componentController extends Controller
 
         $NO2 = $obj->countNO($dataNO2->payloadtotal);
     
-        // hitund data partikel O3
+        // hitung data partikel O3
         $dataO3 = 234;
         $O3 = $obj->countO($dataO3);
 
@@ -33,6 +34,11 @@ class componentController extends Controller
 
         $dataCO2 = 20;
         $CO2 = $obj->countCO($dataCO2);
+
+
+        //data grafik per jam 
+        $dataPM = DB::table('node_b')->get();
+        dd($dataPM);
 
         return view('pages.dashboard', compact('NO2', 'O3', 'PM10', 'SO2', 'CO2'));
     }
