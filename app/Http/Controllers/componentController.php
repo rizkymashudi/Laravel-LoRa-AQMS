@@ -42,8 +42,7 @@ class componentController extends Controller
         $dataCO2 = 20;
         $CO2 = $obj->countCO($dataCO2);
 
-
-        //data grafik per jam 
+        //data grafik PM10 per jam 
         $dataPM = DB::table('node_b')->get();
         // dd($dataPM);
 

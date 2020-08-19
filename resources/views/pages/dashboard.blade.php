@@ -499,7 +499,7 @@
         }
         
         var lineChartPMData = {
-          labels  : [ @php $counter = 0; @endphp @foreach($dataPM as $dt) @php $datetotime = date_create($dt->created_at); @endphp  '{{date_format($datetotime,"H:i:s")}}' @if($counter != count( $dataPM ) - 1),@endif @php  $counter = $counter + 1;  @endphp @endforeach],
+          labels  : [ @php $counter = 0; @endphp @foreach($dataPM as $dt) @php $datetotime = date_create($dt->created_at); @endphp  '{{date_format($datetotime,"D H:i")}}' @if($counter != count( $dataPM ) - 1),@endif @php  $counter = $counter + 1;  @endphp @endforeach],
           datasets: [
             {
               label               : PM10,
