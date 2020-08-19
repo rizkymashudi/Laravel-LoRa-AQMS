@@ -44,9 +44,9 @@ class componentController extends Controller
 
 
         //data grafik per jam 
-        // $dataPM = DB::table('node_b')->get();
+        $dataPM = DB::table('node_b')->get();
         // dd($dataPM);
 
-        return view('pages.dashboard', compact('NO2', 'O3', 'PM10', 'SO2', 'CO2'));
+        return view('pages.dashboard', compact('NO2', 'O3', 'PM10', 'SO2', 'CO2', 'dataPM'));
     }
 }

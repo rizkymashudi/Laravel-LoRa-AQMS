@@ -499,7 +499,7 @@
         }
         
         var lineChartPMData = {
-          labels  : [ '01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00', '00:00'],
+          labels  : [ @php $counter = 0; @endphp @foreach($dataPM as $dt) @php $datetotime = date_create($dt->created_at); @endphp  '{{date_format($datetotime,"H:i:s")}}' @if($counter != count( $dataPM ) - 1),@endif @php  $counter = $counter + 1;  @endphp @endforeach],
           datasets: [
             {
               label               : PM10,
@@ -507,7 +507,7 @@
               pointBorderWidth    : 3,
               fill                : false,
               lineTension         : 0,
-              data                : [{{ $NO2 }}, 150, 70, 20, 330, 80, 43]
+              data                : [@php $countdatalast = 0; @endphp @foreach($dataPM as $pl) {{ $pl->payload }}@if($countdatalast != count($dataPM) -1), @endif @php $countdatalast = $countdatalast + 1; @endphp @endforeach]
             }
           ]
         }
