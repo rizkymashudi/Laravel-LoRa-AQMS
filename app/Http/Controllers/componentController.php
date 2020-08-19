@@ -15,30 +15,37 @@ class componentController extends Controller
         //make new object
         $obj = new ISPU();
 
-        // Hitung data partikel NO2
+        // Hitung data diagram batang partikel NO2
         $dataNO2  = DB::table('partikel')
-                ->select(DB::raw('SUM(payload) as payloadtotal'))
+                ->select(DB::raw('AVG(payload) as payloadtotal'))
                 ->first();
+        // dd(round($dataNO2->payloadtotal));
 
-        $NO2 = $obj->countNO($dataNO2->payloadtotal);
+        $NO2 = $obj->countNO(round($dataNO2->payloadtotal));
     
-        // hitung data partikel O3
+        // hitung data diagram batang partikel O3
         $dataO3 = 234;
         $O3 = $obj->countO($dataO3);
 
-        $dataPM10 = 50;
-        $PM10 = $obj->countPM($dataPM10);
+        // Hitung data diagram batang partikel PM10
+        $dataPM10 = DB::table('node_b')
+                    ->select(DB::raw('AVG(payload) as payloadttl'))
+                    ->first();
+        // dd(round($dataPM10->payloadttl));
+        $PM10 = $obj->countPM(round($dataPM10->payloadttl));
 
+        //Hitung data diagram batang partikel SO2
         $dataSO2 = 100;
         $SO2 = $obj->countSO($dataSO2);
 
+        // Hitung data diagram batang partikel CO2 
         $dataCO2 = 20;
         $CO2 = $obj->countCO($dataCO2);
 
 
         //data grafik per jam 
-        $dataPM = DB::table('node_b')->get();
-        dd($dataPM);
+        // $dataPM = DB::table('node_b')->get();
+        // dd($dataPM);
 
         return view('pages.dashboard', compact('NO2', 'O3', 'PM10', 'SO2', 'CO2'));
     }
