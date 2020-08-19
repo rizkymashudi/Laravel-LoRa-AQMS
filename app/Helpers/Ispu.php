@@ -82,7 +82,11 @@ class ISPU{
             echo 'not found';
         endif;
 
-        return array($Xa, $Xb);
+        // Mari berhitung
+        $I = (($Ia-$Ib) / ($Xa-$Xb)) * ($xX - $Xb) + $Ib;
+
+        // dd($Ia);
+        return round($I);
     }
 
     public function countSO($xX){
@@ -124,7 +128,10 @@ class ISPU{
             echo 'not found';
         endif;
 
-        return array($Xa, $Xb);
+        // Mari berhitung
+        $I = (($Ia-$Ib)/($Xa-$Xb)) * ($xX-$Xb) + $Ib;
+
+        return round($I);
     }
 
     public function countCO($xX){
@@ -166,7 +173,10 @@ class ISPU{
             echo 'not found';
         endif;
 
-        return array($Xa, $Xb);
+        // Mari berhitung
+        $I = (($Ia-$Ib) / ($Xa - $Xb)) * ($xX - $Xb) + $Ib;
+
+        return round($I);
     }
 
     public function countO($xX){
@@ -187,20 +197,31 @@ class ISPU{
         elseif(in_array($xX, $oB)):
             $Xa = 400;
             $Xb = 235;
+            $Ia = 200;
+            $Ib = 100;
         elseif(in_array($xX, $oC)):
             $Xa = 800;
             $Xb = 400;
+            $Ia = 300;
+            $Ib = 200;
         elseif(in_array($xX, $oD)):
             $Xa = 1000;
             $Xb = 800;
+            $Ia = 400;
+            $Ib = 300;
         elseif(in_array($xX, $oE)):
             $Xa = 1200;
             $Xb = 1000;
+            $Ia = 500;
+            $Ib = 400;
         else:
             echo 'not found';
         endif;
 
-        return array($Xa, $Xb);
+        // Mari berhitung
+        $I = (($Ia-$Ib) / ($Xa-$Xb)) * ($xX - $Xb) + $Ib;
+
+        return round($I);
     }
 
     public function countNO($xX){
@@ -216,23 +237,36 @@ class ISPU{
         if(in_array($xX, $noA)):
             $Xa = 2;
             $Xb = 2;
+            $Ia = 100;
+            $Ib = 50;
         elseif(in_array($xX, $noB)):
             $Xa = 1130;
             $Xb = 2;
+            $Ia = 200;
+            $Ib = 100;
         elseif(in_array($xX, $noC)):
             $Xa = 2260;
             $Xb = 1130;
+            $Ia = 300;
+            $Ib = 200;
         elseif(in_array($xX, $noD)):
             $Xa = 3000;
             $Xb = 2260;
+            $Ia = 400;
+            $Ib = 300;
         elseif(in_array($xX, $noE)):
             $Xa = 3750;
             $Xb = 3000;
+            $Ia = 500;
+            $Ib = 400;
         else:
             echo 'not found';
         endif;
 
-        return array($Xa, $Xb);
+        // Mari berhitung
+        $I = (($Ia-$Ib)/($Xa-$Xb)) * ($xX - $Xb) + $Ib;
+
+        return round($I);
     }
 }
 ?>

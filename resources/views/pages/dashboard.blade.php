@@ -346,7 +346,7 @@
               pointStrokeColor    : 'rgba(60,141,188,1)',
               pointHighlightFill  : '#fff',
               pointHighlightStroke: 'rgba(60,141,188,1)',
-              data                : [330, 150, 70, {{ $dataO3 }}, {{ $dataNO2->payloadtotal }}]
+              data                : [{{ $PM10 }}, {{ $SO2 }}, {{ $CO2 }}, {{ $O3 }}, {{ $NO2 }}]
             }
           ]
         }
@@ -507,7 +507,7 @@
               pointBorderWidth    : 3,
               fill                : false,
               lineTension         : 0,
-              data                : [{{ $dataNO2->payloadtotal }}, 150, 70, 20, 330, 80, 43]
+              data                : [{{ $NO2 }}, 150, 70, 20, 330, 80, 43]
             }
           ]
         }
@@ -560,7 +560,7 @@
               pointBorderWidth    : 3,
               fill                : false,
               lineTension         : 0,
-              data                : [{{ $dataNO2->payloadtotal }}, 150, 70, 20, 330, 80, 43]
+              data                : [{{ $NO2 }}, 150, 70, 20, 330, 80, 43]
             }
           ]
         }
@@ -614,7 +614,7 @@
               pointBorderWidth    : 3,
               fill                : false,
               lineTension         : 0,
-              data                : [{{ $dataNO2->payloadtotal }}, 150, 70, 20, 330, 80, 43]
+              data                : [{{ $NO2 }}, 150, 70, 20, 330, 80, 43]
             }
           ]
         }
@@ -666,7 +666,7 @@
               pointBorderWidth    : 3,
               fill                : false,
               lineTension         : 0,
-              data                : [{{ $dataNO2->payloadtotal }}, 150, 70, 20, 330, 80, 43]
+              data                : [{{ $NO2 }}, 150, 70, 20, 330, 80, 43]
             }
           ]
         }
@@ -723,7 +723,7 @@
               pointBorderWidth    : 3,
               fill                : false,
               lineTension         : 0,
-              data                : [{{ $dataNO2->payloadtotal }}, 150, 70, 20, 330, 80, 43]
+              data                : [{{ $NO2 }}, 150, 70, 20, 330, 80, 43]
             }
           ]
         }
@@ -800,16 +800,16 @@
 
 
       //pengkondisian warna circle Sensor Node A untuk CO2
-      if((70 >= 0) && (70 <= 50)){
+      if(({{ $CO2 }} >= 0) && ({{ $CO2 }} <= 50)){
         var colorCO2 = chartColors.color1;
         var indicationCO2 = 'Baik';
-      } else if ((70 >= 51 ) && (70 <= 100)) {
+      } else if (({{ $CO2 }} >= 51 ) && ({{ $CO2 }} <= 100)) {
         var colorCO2 = chartColors.color2;
         var indicationCO2 = 'Sedang';
-      } else if ((70 >= 101) && (70 <= 199)) {
+      } else if (({{ $CO2 }} >= 101) && ({{ $CO2 }} <= 199)) {
         var colorCO2 = chartColors.color3;
         var indicationCO2 = 'Tidak sehat';
-      } else if ((70 >= 200) && (70 <= 299)) {
+      } else if (({{ $CO2 }} >= 200) && ({{ $CO2 }} <= 299)) {
         var colorCO2 = chartColors.color4;
         var indicationCO2 = 'Sangat tidak sehat';
       } else {
@@ -818,16 +818,16 @@
       }
 
       //pengkondisian warna circle Sensor Node B untuk O3
-      if(({{ $dataO3 }} >= 0) && ({{ $dataO3 }} <= 50)){
+      if(({{ $O3 }} >= 0) && ({{ $O3 }} <= 50)){
         var colorO3 = chartColors.color1;
         var indicationO3 = 'Baik';
-      } else if (({{ $dataO3 }} >= 51 ) && ({{ $dataO3 }} <= 100)) {
+      } else if (({{ $O3 }} >= 51 ) && ({{ $O3 }} <= 100)) {
         var colorO3 = chartColors.color2;
         var indicationO3= 'Sedang';
-      } else if (({{ $dataO3 }} >= 101) && ({{ $dataO3 }} <= 199)) {
+      } else if (({{ $O3 }} >= 101) && ({{ $O3 }} <= 199)) {
         var colorO3 = chartColors.color3;
         var indicationO3 = 'Tidak sehat';
-      } else if (({{ $dataO3 }} >= 200) && ({{ $dataO3 }} <= 299)) {
+      } else if (({{ $O3 }} >= 200) && ({{ $O3 }} <= 299)) {
         var colorO3 = chartColors.color4;
         var indicationO3 = 'Sangat tidak sehat';
       } else {
@@ -836,16 +836,16 @@
       }
 
       //pengkondisian warna circle sensor node C untuk NO2
-      if(({{ $dataNO2->payloadtotal }} >= 0) && ({{ $dataNO2->payloadtotal }} <= 50)){
+      if(({{ $NO2 }} >= 0) && ({{ $NO2 }} <= 50)){
         var colorNO2 = chartColors.color1;
         var indicationNO2 = 'Baik';
-      } else if (({{ $dataNO2->payloadtotal }} >= 51 ) && ({{ $dataNO2->payloadtotal }} <= 100)) {
+      } else if (({{ $NO2 }} >= 51 ) && ({{ $NO2 }} <= 100)) {
         var colorNO2 = chartColors.color2;
         var indicationNO2 = 'Sedang';
-      } else if (({{ $dataNO2->payloadtotal }} >= 101) && ({{ $dataNO2->payloadtotal }} <= 199)) {
+      } else if (({{ $NO2 }} >= 101) && ({{ $NO2 }} <= 199)) {
         var colorNO2 = chartColors.color3;
         var indicationNO2 = 'Tidak sehat';
-      } else if (({{ $dataNO2->payloadtotal }} >= 200) && ({{ $dataNO2->payloadtotal }} <= 299)) {
+      } else if (({{ $NO2 }} >= 200) && ({{ $NO2 }} <= 299)) {
         var colorNO2 = chartColors.color4;
         var indicationNO2 = 'Sangat tidak sehat';
       } else {
@@ -854,16 +854,16 @@
       }
 
        //pengkondisian warna circle Sensor Node D untuk SO2
-       if((150 >= 0) && (150 <= 50)){
+       if(({{ $SO2 }} >= 0) && ({{ $SO2 }} <= 50)){
         var colorSO2 = chartColors.color1;
         var indicationSO2 = 'Baik';
-      } else if ((150 >= 51 ) && (150 <= 100)) {
+      } else if (({{ $SO2 }} >= 51 ) && ({{ $SO2 }} <= 100)) {
         var colorSO2 = chartColors.color2;
         var indicationSO2 = 'Sedang';
-      } else if ((150 >= 101) && (150 <= 199)) {
+      } else if (({{ $SO2 }} >= 101) && ({{ $SO2 }} <= 199)) {
         var colorSO2 = chartColors.color3;
         var indicationSO2 = 'Tidak sehat';
-      } else if ((150 >= 200) && (150 <= 299)) {
+      } else if (({{ $SO2 }} >= 200) && ({{ $SO2 }} <= 299)) {
         var colorSO2 = chartColors.color4;
         var indicationSO2 = 'Sangat tidak sehat';
       } else {
@@ -872,16 +872,16 @@
       }
 
        //pengkondisian warna circle Sensor Node E untuk PM10
-       if((330 >= 0) && (330 <= 50)){
+       if(({{ $PM10 }} >= 0) && ({{ $PM10 }} <= 50)){
         var colorPM10 = chartColors.color1;
         var indicationPM10 = 'Baik';
-      } else if ((330 >= 51 ) && (330 <= 100)) {
+      } else if (({{ $PM10 }} >= 51 ) && ({{ $PM10 }} <= 100)) {
         var colorPM10 = chartColors.color2;
         var indicationPM10 = 'Sedang';
-      } else if ((330 >= 101) && (330 <= 199)) {
+      } else if (({{ $PM10 }} >= 101) && ({{ $PM10 }} <= 199)) {
         var colorPM10 = chartColors.color3;
         var indicationPM10 = 'Tidak sehat';
-      } else if ((330 >= 200) && (330 <= 299)) {
+      } else if (({{ $PM10 }} >= 200) && ({{ $PM10 }} <= 299)) {
         var colorPM10 = chartColors.color4;
         var indicationPM10 = 'Sangat tidak sehat';
       } else {
@@ -902,7 +902,7 @@
               '<h5 id="firstHeading" class="firstHeading">Sensor Node A</h5>' +
               '<div id="bodyContent">' +
               "Partikel udara : "+ CO2 +"<br>" +
-              "Kadar ISPU : <br>" +
+              "Kadar ISPU : {{ $CO2 }}<br>" +
               "keterangan : "+ indicationCO2 +"<br>" +
               "</div>" +
               "</div>",
@@ -919,7 +919,7 @@
               '<h5 id="firstHeading" class="firstHeading">Sensor Node B</h5>' +
               '<div id="bodyContent">' +
               "Partikel udara : "+ O3 +"<br>" +
-              "Kadar ISPU : {{ $dataO3 }}<br>" +
+              "Kadar ISPU : {{ $O3 }}<br>" +
               "keterangan : "+ indicationO3 +"<br>" +
               "</div>" +
               "</div>",
@@ -936,7 +936,7 @@
               '<h5 id="firstHeading" class="firstHeading">Sensor Node C</h5>' +
               '<div id="bodyContent">' +
               "Partikel udara : "+ NO2 +"<br>" +
-              "Kadar ISPU : {{ $dataNO2->payloadtotal }}<br>" +
+              "Kadar ISPU : {{ $NO2 }}<br>" +
               "keterangan : "+ indicationNO2 +"<br>" +
               "</div>" +
               "</div>",
@@ -953,7 +953,7 @@
               '<h5 id="firstHeading" class="firstHeading">Sensor Node D</h5>' +
               '<div id="bodyContent">' +
               "Partikel udara : "+ SO2 +"<br>" +
-              "Kadar ISPU : <br>" +
+              "Kadar ISPU : {{ $SO2 }}<br>" +
               "keterangan : "+ indicationSO2 +"<br>" +
               "</div>" +
               "</div>",
@@ -970,7 +970,7 @@
               '<h5 id="firstHeading" class="firstHeading">Sensor Node E</h5>' +
               '<div id="bodyContent">' +
               "Partikel udara : "+ PM10 +"<br>" +
-              "Kadar ISPU : <br>" +
+              "Kadar ISPU : {{ $PM10 }}<br>" +
               "keterangan : "+ indicationPM10 +"<br>" +
               "</div>" +
               "</div>",
