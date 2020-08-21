@@ -97,7 +97,7 @@
                   </div>
                   <div class="card-body">
                     <div class="map">
-                      <div id="map" style="width: auto; height: 376px;"></div>
+                      <div id="map" style="width: auto; height: 379px;"></div>
                     </div>
                     {{-- <div class="container border border-dark" style="margin-top: 5px;">
                       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 border border-dark">
@@ -323,6 +323,11 @@
     </style>
 
     <script>
+      //interval carousel
+      $(document).ready(function(){
+        $("#carouselExampleIndicators").carousel({interval: 4000});
+      });
+
       var chartColors = {
         color1: 'rgba(0, 128, 0)',    //green
         color2: 'rgba(0, 0, 255)',    //blue
