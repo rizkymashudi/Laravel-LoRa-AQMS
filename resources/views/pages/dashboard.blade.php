@@ -20,10 +20,8 @@
 
     <!-- Main content -->
     <section class="content">
-
       <div class="container-fluid">
         <div class="row">
-          <!-- /.col (LEFT) -->
           <div class="col">
           
             <!-- BAR CHART -->
@@ -83,12 +81,13 @@
                   </div>
                 </div>
               </div>
-              <!-- /.card-body -->
             </div>
+            <!-- END BAR CHART -->
 
+            <!-- ROW MAP LOCATION & GRAFIK PM10 -->
             <div class="row">
+              <!-- SENSOR MAP LOCATION -->
               <div class="col-md-6">
-                <!-- MAP -->
                 <div class="card card-dark">
                   <div class="card-header">
                     <h3 class="card-title">Lokasi Sensor</h3>
@@ -113,9 +112,10 @@
                 </div>
 
               </div>
+              <!-- END SENSOR MAP LOCATION-->
               
+              <!-- GRAFIK PM10 -->
               <div class="col-md-6">
-                <!-- GRAFIK PM10 -->
                 <div class="card card-dark">
                   <div class="card-header">
                     <h3 class="card-title">Grafik PM<sub>10</sub></h3>
@@ -139,17 +139,16 @@
                       </div>
                     </div>
                   </div>
-                  <!-- /.card-body -->
                 </div>
-                <!-- END GRAFIK PM10 -->
               </div>
+              <!-- END GRAFIK PM10 -->
             </div>
-            
+            <!-- END ROW MAP LOCATION & GRAFIK PM10 -->
 
             <!-- GRAFIK PER PARTIKULAT -->
             <div class="row">
+              <!-- GRAFIK SO2 -->
               <div class="col-md-6">
-                <!-- GRAFIK SO2 -->
                 <div class="card card-dark">
                   <div class="card-header">
                     <h3 class="card-title">Grafik SO<sub>2</sub></h3>
@@ -174,11 +173,11 @@
                     </div>
                   </div>
                 </div>
-                <!-- END GRAFIK SO2 -->
               </div>
+              <!-- END GRAFIK SO2 -->
 
+              <!-- GRAFIK CO2 -->
               <div class="col-md-6">
-                <!-- GRAFIK CO2 -->
                 <div class="card card-dark">
                   <div class="card-header">
                     <h3 class="card-title">Grafik CO<sub>2</sub></h3>
@@ -203,11 +202,11 @@
                     </div>
                   </div>
                 </div>
-                <!-- END GRAFIK CO2 -->
               </div>
+              <!-- END GRAFIK CO2 -->
 
+              <!-- GRAFIK O3 -->
               <div class="col-md-6">
-                <!-- GRAFIK O3 -->
                 <div class="card card-dark">
                   <div class="card-header">
                     <h3 class="card-title">Grafik O<sub>3</sub></h3>
@@ -232,11 +231,11 @@
                     </div>
                   </div>
                 </div>
-                <!-- END GRAFIK O3 -->
               </div>
+              <!-- END GRAFIK O3 -->
               
+              <!-- GRAFIK NO2 -->
               <div class="col-md-6">
-                <!-- GRAFIK NO2 -->
                 <div class="card card-dark">
                   <div class="card-header">
                     <h3 class="card-title">Grafik NO<sub>2</sub></h3>
@@ -261,15 +260,13 @@
                     </div>
                   </div>
                 </div>
-                <!-- END GRAFIK NO2 -->
               </div>
-
+              <!-- END GRAFIK NO2 -->
             </div>
-
-        </div>
-        <!-- /.row -->
-      </div><!-- /.container-fluid -->
-
+            <!-- END ROW GRAFIK PER PARTIKULAT -->
+          </div> <!-- END CONTENT COLUMN -->
+       </div><!-- END CONTENT ROW -->
+      </div>
     </section>
 
     <style>
@@ -296,6 +293,7 @@
         color5: 'rgba(0, 0, 0)'       //black
       };
 
+      // ========== CHART JS ============ //
       $(function () {
         /* ChartJS
          * -------
@@ -768,10 +766,12 @@
         // END LINE CHART NO2
 
       })
+      // ========== END CHART JS ======== //
 
 
-      /*======================= GMAP API ========================== */
-      //variable Partikel udara
+      /*======================= GMAPS API ========================== */
+
+      // ## variable Partikel udara ## //
       // variable PM10
       var PM  = 'PM'
       var satu = "\u2081" //unicode 1
@@ -1018,6 +1018,8 @@
         }
       } 
       google.maps.event.addDomListener(window, 'load', initialize);
+
+      /*======================== END GMAPS API ========================*/
     </script>
 
 @endsection

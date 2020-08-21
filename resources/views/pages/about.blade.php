@@ -39,7 +39,7 @@
 			<div class="row d-flex justify-content-center " style="margin: auto;">
 				<div class="col-md-6 py-5 d-flex-justify-content-center text-center">
 					{{-- instagram --}}
-					<a class="icn col-xl-6" href="https://instagram/hypershit_" target="_blank">
+					<a class="icn col-xl-6" href="https://instagram/slplessjnkie" target="_blank">
 						<i class="fab fa-instagram fa-lg white-text fa-2x"></i>
 					</a>
 		
