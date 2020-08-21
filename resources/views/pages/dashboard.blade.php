@@ -23,7 +23,6 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col">
-          
             <!-- BAR CHART -->
             <div class="card card-dark">
               <div class="card-header">
@@ -84,8 +83,9 @@
             </div>
             <!-- END BAR CHART -->
 
-            <!-- ROW MAP LOCATION & GRAFIK PM10 -->
+            <!-- ROW MAP LOCATION & CAROUESELL-->
             <div class="row">
+
               <!-- SENSOR MAP LOCATION -->
               <div class="col-md-6">
                 <div class="card card-dark">
@@ -97,7 +97,7 @@
                   </div>
                   <div class="card-body">
                     <div class="map">
-                      <div id="map" style="width: auto; height: 300px;"></div>
+                      <div id="map" style="width: auto; height: 376px;"></div>
                     </div>
                     {{-- <div class="container border border-dark" style="margin-top: 5px;">
                       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-5 border border-dark">
@@ -112,158 +112,197 @@
                 </div>
 
               </div>
-              <!-- END SENSOR MAP LOCATION-->
+              <!-- END SENSOR MAP LOCATION--> 
               
-              <!-- GRAFIK PM10 -->
+              <!-- CAROUSELL GRAFIK PER PARTIKULAT -->
               <div class="col-md-6">
                 <div class="card card-dark">
                   <div class="card-header">
-                    <h3 class="card-title">Grafik PM<sub>10</sub></h3>
+                    <h3 class="card-title">Grafik per partikulat</h3>
                     <div class="card-tools">
                       <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
                     </div>
                   </div>
-                  <div class="card-body" style="height: 340px;">
-                    <div class="chart">
-                      <canvas id="lineChartPM" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-                    </div>
-                    <div class="container">
-                      <div class="row">
-                        <div class="col text-center">
-                          <table border="0" style="margin:auto; margin-top:auto; margin-bottom:auto; height:15px;">
-                            <tr>
-                              <td valign="middle"><p style="margin:auto; font-size:15px;">Particulate Matter, PM<sub>10</sub> (Periode Pengukuran Rata-rata 1 Jam) &#181;g / m<sup>3</sup></p></td>
-                            </tr>
-                          </table>
+                  <!-- /.card-header -->
+                  <div class="card-body">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                      <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                      </ol>
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                          <!-- GRAFIK PM10 -->
+                          <div class="col-md-15" alt="first slide">
+                            <div class="card">
+                              <div class="card-header">
+                                <h3 class="card-title">Grafik PM<sub>10</sub></h3>
+                                <div class="card-tools">
+                                  <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+                                </div>
+                              </div>
+                              <div class="card-body">
+                                <div class="chart">
+                                  <canvas id="lineChartPM" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                                </div>
+                                <div class="container">
+                                  <div class="row">
+                                    <div class="col text-center">
+                                      <table border="0" style="margin:auto; margin-top:auto; margin-bottom:auto; height:15px;">
+                                        <tr>
+                                          <td valign="middle"><p style="margin:auto; font-size:15px;">Particulate Matter, PM<sub>10</sub> (Periode Pengukuran Rata-rata 1 Jam) &#181;g / m<sup>3</sup></p></td>
+                                        </tr>
+                                      </table>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- END GRAFIK PM10 -->
+                        </div>
+                        <div class="carousel-item">
+                          <!-- GRAFIK SO2 -->
+                          <div class="col-md-15" alt="second slide">
+                            <div class="card">
+                              <div class="card-header">
+                                <h3 class="card-title">Grafik SO<sub>2</sub></h3>
+                                <div class="card-tools">
+                                  <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+                                </div>
+                              </div>
+                              <div class="card-body">
+                                <div class="chart">
+                                  <canvas id="lineChartSO" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                                </div>
+                                <div class="container">
+                                  <div class="row">
+                                    <div class="col text-center">
+                                      <table border="0" style="margin:auto; margin-top:auto; margin-bottom:auto; height:15px;">
+                                        <tr>
+                                          <td valign="middle"><p style="margin:auto; font-size:15px;">Sulfur Dioksida, SO<sub>2</sub> (Periode Pengukuran Rata-rata 1 Jam) &#181;g / m<sup>3</sup></p></td>
+                                        </tr>
+                                      </table>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- END GRAFIK SO2 -->
+                        </div>
+                        <div class="carousel-item">
+                          <!-- GRAFIK CO2 -->
+                          <div class="col-md-15" alt="third slide">
+                            <div class="card">
+                              <div class="card-header">
+                                <h3 class="card-title">Grafik CO<sub>2</sub></h3>
+                                <div class="card-tools">
+                                  <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+                                </div>
+                              </div>
+                              <div class="card-body">
+                                <div class="chart">
+                                  <canvas id="lineChartCO" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                                </div>
+                                <div class="container">
+                                  <div class="row">
+                                    <div class="col text-center">
+                                      <table border="0" style="margin:auto; margin-top:auto; margin-bottom:auto; height:15px;">
+                                        <tr>
+                                          <td valign="middle"><p style="margin:auto; font-size:15px;">Carbon monoksida, CO<sub>2</sub> (Periode Pengukuran Rata-rata 1 Jam) &#181;g / m<sup>3</sup></p></td>
+                                        </tr>
+                                      </table>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- END GRAFIK CO2 -->
+                        </div>
+                        <div class="carousel-item">
+                          <!-- GRAFIK O3 -->
+                          <div class="col-md-15" alt="fourth slide">
+                            <div class="card">
+                              <div class="card-header">
+                                <h3 class="card-title">Grafik O<sub>3</sub></h3>
+                                <div class="card-tools">
+                                  <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+                                </div>
+                              </div>
+                              <div class="card-body">
+                                <div class="chart">
+                                  <canvas id="lineChartO" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                                </div>
+                                <div class="container">
+                                  <div class="row">
+                                    <div class="col text-center">
+                                      <table border="0" style="margin:auto; margin-top:auto; margin-bottom:auto; height:15px;">
+                                        <tr>
+                                          <td valign="middle"><p style="margin:auto; font-size:15px;">Ozon, O<sub>3</sub> (Periode Pengukuran Rata-rata 1 Jam) &#181;g / m<sup>3</sup></p></td>
+                                        </tr>
+                                      </table>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- END GRAFIK O3 -->
+                        </div>
+                        <div class="carousel-item">
+                          <!-- GRAFIK NO2 -->
+                          <div class="col-md-15" alt="fifth slide">
+                            <div class="card">
+                              <div class="card-header">
+                                <h3 class="card-title">Grafik NO<sub>2</sub></h3>
+                                <div class="card-tools">
+                                  <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+                                </div>
+                              </div>
+                              <div class="card-body">
+                                <div class="chart">
+                                  <canvas id="lineChartNO" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                                </div>
+                                <div class="container">
+                                  <div class="row">
+                                    <div class="col text-center">
+                                      <table border="0" style="margin:auto; margin-top:auto; margin-bottom:auto; height:15px;">
+                                        <tr>
+                                          <td valign="middle"><p style="margin:auto; font-size:15px;">Nitrogen Dioksida, NO<sub>2</sub> (Periode Pengukuran Rata-rata 1 Jam) &#181;g / m<sup>3</sup></p></td>
+                                        </tr>
+                                      </table>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- END GRAFIK NO2 -->
                         </div>
                       </div>
+                      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                      </a>
+                      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                      </a>
                     </div>
                   </div>
+                  <!-- /.card-body -->
                 </div>
+                <!-- /.card -->
               </div>
-              <!-- END GRAFIK PM10 -->
+              <!-- END CAROUSELL GRAFIK PER PARTIKULAT-->
             </div>
-            <!-- END ROW MAP LOCATION & GRAFIK PM10 -->
+            <!-- END ROW MAP LOCATION & CAROUSELL-->
 
-            <!-- GRAFIK PER PARTIKULAT -->
-            <div class="row">
-              <!-- GRAFIK SO2 -->
-              <div class="col-md-6">
-                <div class="card card-dark">
-                  <div class="card-header">
-                    <h3 class="card-title">Grafik SO<sub>2</sub></h3>
-                    <div class="card-tools">
-                      <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div class="chart">
-                      <canvas id="lineChartSO" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-                    </div>
-                    <div class="container">
-                      <div class="row">
-                        <div class="col text-center">
-                          <table border="0" style="margin:auto; margin-top:auto; margin-bottom:auto; height:15px;">
-                            <tr>
-                              <td valign="middle"><p style="margin:auto; font-size:15px;">Sulfur Dioksida, SO<sub>2</sub> (Periode Pengukuran Rata-rata 1 Jam) &#181;g / m<sup>3</sup></p></td>
-                            </tr>
-                          </table>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- END GRAFIK SO2 -->
-
-              <!-- GRAFIK CO2 -->
-              <div class="col-md-6">
-                <div class="card card-dark">
-                  <div class="card-header">
-                    <h3 class="card-title">Grafik CO<sub>2</sub></h3>
-                    <div class="card-tools">
-                      <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div class="chart">
-                      <canvas id="lineChartCO" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-                    </div>
-                    <div class="container">
-                      <div class="row">
-                        <div class="col text-center">
-                          <table border="0" style="margin:auto; margin-top:auto; margin-bottom:auto; height:15px;">
-                            <tr>
-                              <td valign="middle"><p style="margin:auto; font-size:15px;">Carbon monoksida, CO<sub>2</sub> (Periode Pengukuran Rata-rata 1 Jam) &#181;g / m<sup>3</sup></p></td>
-                            </tr>
-                          </table>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- END GRAFIK CO2 -->
-
-              <!-- GRAFIK O3 -->
-              <div class="col-md-6">
-                <div class="card card-dark">
-                  <div class="card-header">
-                    <h3 class="card-title">Grafik O<sub>3</sub></h3>
-                    <div class="card-tools">
-                      <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div class="chart">
-                      <canvas id="lineChartO" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-                    </div>
-                    <div class="container">
-                      <div class="row">
-                        <div class="col text-center">
-                          <table border="0" style="margin:auto; margin-top:auto; margin-bottom:auto; height:15px;">
-                            <tr>
-                              <td valign="middle"><p style="margin:auto; font-size:15px;">Ozon, O<sub>3</sub> (Periode Pengukuran Rata-rata 1 Jam) &#181;g / m<sup>3</sup></p></td>
-                            </tr>
-                          </table>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- END GRAFIK O3 -->
-              
-              <!-- GRAFIK NO2 -->
-              <div class="col-md-6">
-                <div class="card card-dark">
-                  <div class="card-header">
-                    <h3 class="card-title">Grafik NO<sub>2</sub></h3>
-                    <div class="card-tools">
-                      <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div class="chart">
-                      <canvas id="lineChartNO" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-                    </div>
-                    <div class="container">
-                      <div class="row">
-                        <div class="col text-center">
-                          <table border="0" style="margin:auto; margin-top:auto; margin-bottom:auto; height:15px;">
-                            <tr>
-                              <td valign="middle"><p style="margin:auto; font-size:15px;">Nitrogen Dioksida, NO<sub>2</sub> (Periode Pengukuran Rata-rata 1 Jam) &#181;g / m<sup>3</sup></p></td>
-                            </tr>
-                          </table>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- END GRAFIK NO2 -->
-            </div>
-            <!-- END ROW GRAFIK PER PARTIKULAT -->
           </div> <!-- END CONTENT COLUMN -->
        </div><!-- END CONTENT ROW -->
       </div>
@@ -284,7 +323,6 @@
     </style>
 
     <script>
-
       var chartColors = {
         color1: 'rgba(0, 128, 0)',    //green
         color2: 'rgba(0, 0, 255)',    //blue

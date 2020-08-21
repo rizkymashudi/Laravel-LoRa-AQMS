@@ -42,7 +42,7 @@ class ISPU{
 
 
     // }
-
+    
     public function countPM($xX){
         
         /* Ambien BATAS ATAS DAN ambien BATAS BAWAH */
@@ -52,7 +52,7 @@ class ISPU{
         $pmD = range(420, 500);
         $pmE = range(500, 600);
 
-        /* penentuan ambien batas atas dan ambien batas bawah*/
+        /* penentuan ambien, ISPU batas atas dan ambien, ISPU batas bawah*/
         if(in_array($xX, $pmA)):
             $Xa = 150;
             $Xb = 50;
@@ -98,7 +98,7 @@ class ISPU{
         $soD = range(1600, 2100);
         $soE = range(2100, 2620);
 
-        /*penentuan ambien batas atas dan ambien batas bawah*/
+        /*penentuan ambien, ISPU batas atas dan ambien, ISPU batas bawah*/
         if(in_array($xX, $soA)):
             $Xa = 365;
             $Xb = 80;
@@ -143,12 +143,12 @@ class ISPU{
         $coD = range(34, 46);
         $coE = range(46, 57.5);
 
-        /* penentuan ambien batas atas dan ambien batas bawah*/
+        /* penentuan ambien, ISPU batas atas dan ambien, ISPU batas bawah*/
         if(in_array($xX, $coA)):
-            $Xa = 10;
-            $Xb = 5;
-            $Ia = 100;
-            $Ib = 50;
+            $Xa = 10;   //Ambien batas atas
+            $Xb = 5;    //Ambien batas bawah
+            $Ia = 100;  //ISPU batas atas
+            $Ib = 50;   //ISPU batas bawah
         elseif(in_array($xX, $coB)):
             $Xa = 17;
             $Xb = 10;
