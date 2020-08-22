@@ -548,7 +548,7 @@
               pointBorderWidth    : 3,
               fill                : false,
               lineTension         : 0,
-              data                : [@php $countdatalast = 0; @endphp @foreach($dataPM as $pl) {{ $pl->payload }}@if($countdatalast != count($dataPM) -1), @endif @php $countdatalast = $countdatalast + 1; @endphp @endforeach]
+              data                : [@php $countdatalast = 0; @endphp @foreach($dataPM as $pl) {{ $obj->countPM($pl->payload) }}@if($countdatalast != count($dataPM) -1), @endif @php $countdatalast = $countdatalast + 1; @endphp @endforeach]
             }
           ]
         }

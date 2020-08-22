@@ -42,6 +42,16 @@ class ISPU{
 
 
     // }
+
+    //Function rata-rata
+    public function avg($val){
+
+        // $arrData = array($val);
+        $arrData = explode(',', $val);
+        $average = array_sum($arrData) / count($arrData);
+        // dd($average);
+        return $average;
+    }
     
     public function countPM($xX){
         
