@@ -1,4 +1,4 @@
-@extends('index')
+ @extends('index')
 
 @section('content')
      <!-- Content Header (Page header) -->
@@ -322,6 +322,7 @@
       }
     </style>
 
+    <!-- PLUGIN CHART JS -->
     <script>
       //interval carousel
       $(document).ready(function(){

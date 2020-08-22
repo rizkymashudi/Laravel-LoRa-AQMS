@@ -44,6 +44,7 @@ class componentController extends Controller
 
         //data grafik PM10 per jam 
         $dataPM = DB::table('node_b')->get();
+        // where DB::raw(DATE_ADD(TIME(namecolumn), INTERVAL 24 HOUR)) < DB::RAW(NOW())
         // dd($dataPM);
 
         return view('pages.dashboard', compact('NO2', 'O3', 'PM10', 'SO2', 'CO2', 'dataPM'));
