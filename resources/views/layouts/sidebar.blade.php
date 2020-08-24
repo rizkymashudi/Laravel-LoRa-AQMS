@@ -47,14 +47,14 @@
         </a>
       </li>
       
-      <li class="nav-item">
+      {{-- <li class="nav-item">
         <a href="{{ route('History') }}" class="nav-link {{ Request::is('History') ? 'active' : null }}">
           <i class="nav-icon fas fa-history"></i>
           <p>
             History
           </p>
         </a>
-      </li>
+      </li> --}}
 
       <li class="nav-item">
         <a href="{{ route('Misc') }}" class="nav-link {{ Request::is('Misc') ? 'active' : null }}">
