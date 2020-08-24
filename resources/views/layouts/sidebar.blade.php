@@ -47,18 +47,18 @@
         </a>
       </li>
  
-      {{-- <li class="nav-item">
+      <li class="nav-item">
         <a href="{{ route('Misc') }}" class="nav-link {{ Request::is('Misc') ? 'active' : null }}">
-          <i class="nav-icon fas fa-file"></i>
+          <i class="nav-icon fas fa-info-circle"></i>
           <p>
-            Blank Page
+            Informasi Umum
           </p>
         </a>
-      </li> --}}
+      </li>
       
       <li class="nav-item">
         <a href="{{ route('About') }}" class="nav-link {{ Request::is('About') ? 'active' : null }}">
-          <i class="nav-icon fas fa-info-circle"></i>
+          <i class="nav-icon fas fa-question-circle"></i>
           <p>
             About
           </p>
