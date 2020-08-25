@@ -1,0 +1,271 @@
+/* Normal screen ratio */
+.indicator{
+    font-size: 12px;
+    margin: auto;
+    width: fit-content;
+}
+
+.vertical-center{
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+div.col{
+    width: min-content;
+}
+
+div.containertest{
+    width: 1200px;
+    height: fit-content;
+    margin: auto;
+
+}
+
+p.Partikel{
+    font-size: 20px;
+    margin:auto;
+}
+
+
+/* spesific screen ratio */
+@media screen and (max-width: 320px){
+
+    div.containertest{
+        display: none;
+    }
+
+    h3.judul{
+        font-size: 10px;
+        margin:auto;
+    }
+
+    p.Partikel{
+        font-size: 10px;
+        margin:auto;
+    }
+
+    div.minimize{
+        font-size: 2px;
+        width: 30px;
+        height: min-content;
+    }
+
+    div.cols{
+        width: 200px;
+    }
+
+    div.footer{
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 375px){
+    p.indicator{
+        font-size: 5px;
+        margin: auto;
+    }
+
+    div.containertest{
+        display: none;
+    }
+
+    h3.judul{
+        font-size: 10px;
+        margin:auto;
+    }
+
+    p.Partikel{
+        font-size: 10px;
+        margin:auto;
+    }
+
+    div.minimize{
+        font-size: 2px;
+        width: 30px;
+        height: min-content;
+    }
+
+    div.cols{
+        width: 200px;
+    }
+    div.footer{
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 414px){
+    p.indicator{
+        font-size: 5px;
+        margin: auto;
+    }
+
+    div.containertest{
+        display: none;
+    }
+
+    h3.judul{
+        font-size: 12px;
+        margin:auto;
+    }
+
+    p.Partikel{
+        font-size: 12px;
+        margin:auto;
+    }
+
+    div.minimize{
+        font-size: 2px;
+        width: 30px;
+        height: min-content;
+    }
+
+    div.cols{
+        width: 200px;
+    }
+    div.footer{
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    p.indicator{
+        font-size: 8px;
+        margin: auto;
+    }
+
+    div.containertest{
+        width: 630px;
+        display: none;
+    }
+
+    h3.judul{
+        font-size: 16px;
+        margin:auto;
+    }
+
+    p.Partikel{
+        font-size: 13px;
+        margin:auto;
+    }
+
+    div.minimize{
+        font-size: 3px;
+        width: 30px;
+        height: min-content;
+    }
+
+    div.cols{
+        width: 200px;
+    }
+    div.footer{
+        font-size: 13px;
+    }
+}
+
+@media screen and (max-width: 1024px){
+    p.indicator{
+        font-size: 8px;
+        margin: auto;
+    }
+
+    div.containertest{
+        width: 630px;
+        display: none;
+    }
+
+    h3.judul{
+        font-size: 19px;
+        margin:auto;
+    }
+
+    p.Partikel{
+        font-size: 14px;
+        margin:auto;
+    }
+
+    div.minimize{
+        font-size: 3px;
+        width: 30px;
+        height: min-content;
+    }
+
+    div.cols{
+        width: 200px;
+    }
+    div.footer{
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 1032px){
+    p.indicator{
+        font-size: 8px;
+        margin: auto;
+    }
+
+    div.containertest{
+        width: 630px;
+        display: none;
+    }
+
+    h3.judul{
+        font-size: 19px;
+        margin:auto;
+    }
+
+    p.Partikel{
+        font-size: 14px;
+        margin:auto;
+    }
+
+    div.minimize{
+        font-size: 3px;
+        width: 30px;
+        height: min-content;
+    }
+
+    div.cols{
+        width: 200px;
+    }
+    div.footer{
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 1508px){
+    p.indicator{
+        font-size: 8px;
+        margin: auto;
+    }
+
+    div.containertest{
+        width: 630px;
+        display: none;
+    }
+
+    h3.judul{
+        font-size: 19px;
+        margin:auto;
+    }
+
+    p.Partikel{
+        font-size: 14px;
+        margin:auto;
+    }
+
+    div.minimize{
+        font-size: 3px;
+        width: 30px;
+        height: min-content;
+    }
+
+    div.cols{
+        width: 200px;
+    }
+    div.footer{
+        font-size: 14px;
+    }
+}
