@@ -25,10 +25,15 @@ div.containertest{
 }
 
 p.Partikel{
-    font-size: 20px;
+    font-size: 19px;
     margin:auto;
 }
 
+h3.judul{
+    font-size: 20px;
+    margin:auto;
+    font-weight: bold;
+}
 
 /* spesific screen ratio */
 @media screen and (max-width: 320px){
