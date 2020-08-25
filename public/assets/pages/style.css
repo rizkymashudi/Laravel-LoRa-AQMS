@@ -41,6 +41,10 @@ div.tabel{
     margin-left: auto;
 }
 
+img.logo{
+    background-color: white;
+}
+
 /* spesific screen ratio */
 @media screen and (max-width: 320px){
 
