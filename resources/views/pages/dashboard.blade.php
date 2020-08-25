@@ -271,7 +271,7 @@
     <script>
       //interval carousel
       $(document).ready(function(){
-        $("#carouselExampleIndicators").carousel({interval: 30000});
+        $("#carouselExampleIndicators").carousel({interval: 5000});
       });
 
       var chartColors = {

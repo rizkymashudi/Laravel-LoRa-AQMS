@@ -25,7 +25,7 @@ div.containertest{
 }
 
 p.Partikel{
-    font-size: 19px;
+    font-size: 15px;
     margin:auto;
 }
 
@@ -33,6 +33,12 @@ h3.judul{
     font-size: 20px;
     margin:auto;
     font-weight: bold;
+}
+
+div.tabel{
+    width: fit-content;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 /* spesific screen ratio */
@@ -64,6 +70,10 @@ h3.judul{
 
     div.footer{
         font-size: 10px;
+    }
+
+    div.tabel{
+        width: fit-content;
     }
 }
 
@@ -98,6 +108,11 @@ h3.judul{
     }
     div.footer{
         font-size: 10px;
+    }
+
+    div.tabel{
+        width: fit-content;
+        font-size: xx-small;
     }
 }
 

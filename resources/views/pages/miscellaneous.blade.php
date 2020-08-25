@@ -54,8 +54,8 @@
                     </div>
                     
                     <!-- TABLE RENTANG ISPU -->
-                    <div class="d-flex justify-content-center">
-                        <table class="table table-bordered" style="width: 1470px;">
+                    <div class="d-flex justify-content-center tabel">
+                        <table class="table table-bordered">
                             <thead style="text-align: center;">
                                 <tr>
                                     <th>Kategori</th>
