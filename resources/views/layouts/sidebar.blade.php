@@ -43,7 +43,7 @@
            with font-awesome or any other icon font library -->
       <li class="nav-item nav-compact">
         <a href="{{ route('dashboard') }}" class="nav-link {{ Request::is('/') ? 'active' : null }}">
-          <i class="nav-icon fas fa-tachometer-alt"></i>
+          <i class="nav-icon fas fa-chart-bar"></i>
           <p>Dashboard</p>
         </a>
       </li>
