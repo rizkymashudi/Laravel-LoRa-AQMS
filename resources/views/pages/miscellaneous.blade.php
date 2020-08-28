@@ -17,7 +17,7 @@
     </div> --}}
     <div class="col-25">
         <div class="col-12 mt-2">
-            <h2 class="tebal">Informasi Umum</h2>
+            <h2 class="tebal" style="color: #1b2a4e;">Informasi Umum</h2>
         </div>
     </div>
 
@@ -25,11 +25,11 @@
         <div class="col-12 mt-3">
             <div class="card bg-light text-dark">
                 <div class="card-body">
-                    <h5 class="text-bold">
+                    <h5 class="text-bold" style="color: #1b2a4e">
                         Indeks Kualitas Udara
                     </h5>
     
-                    <p class="pfirst mt-3" style="text-align: justify;">
+                    <p class="pfirst mt-3" style="text-align: justify; color: #1b2a4e">
                         Saat ini Indeks standar kualitas udara yang dipergunakan secara resmi di Indonesia
                         adalah Indek Standar Pencemar Udara (ISPU), hal ini sesuai dengan Keputusan Menteri
                         Negara Lingkungan Hidup Nomor : KEP 45 / MENLH / 1997 Tentang Indeks Standar
@@ -39,7 +39,7 @@
                         sebagai bahan pertimbangan dalam melakukan upaya-upaya pengendalian pencemaran
                         udara perlu disusun Indeks Standar Pencemar Udara.
                     </p>
-                    <p class="pfirst" style="text-align: justify;">
+                    <p class="pfirst" style="text-align: justify; color: #1b2a4e">
                         Indeks Standar Pencemar Udara adalah angka yang tidak mempunyai satuan yang
                         menggambarkan kondisi kualitas udara ambien di lokasi dan waktu tertentu yang
                         didasarkan kepada dampak terhadap kesehatan manusia, nilai estetika dan makhluk
@@ -49,21 +49,21 @@
                         Pencemar Udara dapat dilihat pada tabel berikut:
                     </p>
 
-                    <div class="Title">
+                    <div class="Title" style="color: #1b2a4e">
                         <p>Tabel Rentang ISPU</p>
                     </div>
                     
                     <!-- TABLE RENTANG ISPU -->
                     <div class="d-flex justify-content-center tabel">
                         <table class="table table-bordered">
-                            <thead style="text-align: center;">
+                            <thead style="text-align: center; color: #1b2a4e">
                                 <tr>
                                     <th>Kategori</th>
                                     <th>Rentang</th>
                                     <th>Penjelasan</th>
                                 </tr>
                             </thead>
-                            <tbody style="text-align: center;">
+                            <tbody style="text-align: center; color: #1b2a4e">
                                 @foreach ($rentangISPU as $rI)
                                     <tr>
                                         <td>{{ $rI->Kategori }}</td>

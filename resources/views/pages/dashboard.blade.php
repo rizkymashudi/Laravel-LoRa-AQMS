@@ -6,7 +6,7 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0 text-dark aqms">Air Quality Monitoring System LoRa</h1>
+              <h1 class="m-0 aqms" style="color: #1b2a4e;">Air Quality Monitoring System LoRa</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
@@ -24,7 +24,7 @@
         <div class="row">
           <div class="col">
             <!-- BAR CHART -->
-            <div class="card card-dark">
+            <div class="card">
               <div class="card-header">
                 <h3 class="card-title judul">Grafik Index Standar Pencemaran Udara (ISPU)</h3>
                 <div class="card-tools minimize">
@@ -68,7 +68,7 @@
 
               <!-- SENSOR MAP LOCATION -->
               <div class="col-md-6">
-                <div class="card card-dark">
+                <div class="card">
                   <div class="card-header">
                     <h3 class="card-title judul">Lokasi Sensor</h3>
                     <div class="card-tools minimize">
@@ -96,7 +96,7 @@
               
               <!-- CAROUSELL GRAFIK PER PARTIKULAT -->
               <div class="col-md-6">
-                <div class="card card-dark">
+                <div class="card">
                   <div class="card-header">
                     <h3 class="card-title judul">Grafik per partikulat</h3>
                     <div class="card-tools minimize">

@@ -30,9 +30,9 @@ p.Partikel{
 }
 
 h3.judul{
-    font-size: 20px;
+    font-size: 18px;
     margin:auto;
-    font-weight: bold;
+    color: #1b2a4e;
 }
 
 div.tabel{
@@ -55,6 +55,7 @@ img.logo{
     h3.judul{
         font-size: 10px;
         margin:auto;
+        color: #1b2a4e;
     }
 
     p.Partikel{
@@ -94,6 +95,7 @@ img.logo{
     h3.judul{
         font-size: 10px;
         margin:auto;
+        color: #1b2a4e;
     }
 
     p.Partikel{
@@ -133,6 +135,7 @@ img.logo{
     h3.judul{
         font-size: 12px;
         margin:auto;
+        color: #1b2a4e;
     }
 
     p.Partikel{
@@ -168,6 +171,7 @@ img.logo{
     h3.judul{
         font-size: 16px;
         margin:auto;
+        color: #1b2a4e;
     }
 
     p.Partikel{
@@ -203,6 +207,7 @@ img.logo{
     h3.judul{
         font-size: 19px;
         margin:auto;
+        color: #1b2a4e;
     }
 
     p.Partikel{
@@ -238,6 +243,7 @@ img.logo{
     h3.judul{
         font-size: 19px;
         margin:auto;
+        color: #1b2a4e;
     }
 
     p.Partikel{
@@ -273,6 +279,7 @@ img.logo{
     h3.judul{
         font-size: 19px;
         margin:auto;
+        color: #1b2a4e;
     }
 
     p.Partikel{

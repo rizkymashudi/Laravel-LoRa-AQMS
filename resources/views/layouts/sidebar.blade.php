@@ -4,8 +4,8 @@
       <img src="{{ url('AdminLTE/dist/img/user2-160x160.jpg') }}" class="img-circle elevation-2" alt="User Image">
     </div> --}}
     <div class="col text-center" style="width: auto">
-      <p id="currentDate" style="margin:auto; color:#c2c7d0; font-size: 14px;"></p>
-      <p id="waktu" style="margin:auto; color:#c2c7d0; font-size: 14px;"></p>
+      <p id="currentDate" style="margin:auto; color:#1b2a4e; font-size: 14px;"></p>
+      <p id="waktu" style="margin:auto; color:#1b2a4e; font-size: 14px;"></p>
     </div>
       
       <script>
@@ -32,6 +32,7 @@
               } ${date.getDate()}, ${date.getFullYear()}`
             );
           });
+
       </script> 
  </div>
 
@@ -40,7 +41,7 @@
     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
       <!-- Add icons to the links using the .nav-icon class
            with font-awesome or any other icon font library -->
-      <li class="nav-item">
+      <li class="nav-item nav-compact">
         <a href="{{ route('dashboard') }}" class="nav-link {{ Request::is('/') ? 'active' : null }}">
           <i class="nav-icon fas fa-tachometer-alt"></i>
           <p>Dashboard</p>
@@ -56,7 +57,7 @@
         </a>
       </li> --}}
 
-      <li class="nav-item">
+      <li class="nav-item nav-compact">
         <a href="{{ route('Misc') }}" class="nav-link {{ Request::is('Misc') ? 'active' : null }}">
           <i class="nav-icon fas fa-info-circle"></i>
           <p>
@@ -65,7 +66,7 @@
         </a>
       </li>
       
-      <li class="nav-item">
+      <li class="nav-item nav-compact">
         <a href="{{ route('About') }}" class="nav-link {{ Request::is('About') ? 'active' : null }}">
           <i class="nav-icon fas fa-question-circle"></i>
           <p>
