@@ -6,7 +6,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-12 mt-2">
-			<center><h2 class="tebal mb-2">Air Quality Monitoring System using Long Range Communication</h2></center>
+			<center><h2 class="tebal mb-2" style="color: #1b2a4e">Air Quality Monitoring System using Long Range Communication</h2></center>
 			<hr>
 
 			<div class="row mt-5">
@@ -14,7 +14,7 @@
 					<div class="card text" style="width: 18rem; margin-left: auto; margin-right:auto;">
 						<img class="card-img-top" src="pp.jpg" alt="Card image cap">
 						<div class="card-body">
-							<p class="card-text">
+							<p class="card-text" style="color: #1b2a4e">
 								<b>Rizky mashudi</b><br>
 								junior web programmer
 								<br><br>
@@ -29,7 +29,7 @@
 	</div> <!-- end row -->
 
 	<div class="row mt-1">
-		<div class="col-12">
+		<div class="col-12" style="color: #1b2a4e">
 			<h3 class="text-center text-abu1 mt-4">"an astrophile person"</h3><br>
 			<h3 class="text-center text-abu1">"besok <b>weekend</b>"</h3>
 		</div>
