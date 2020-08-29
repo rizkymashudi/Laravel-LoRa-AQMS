@@ -18,6 +18,7 @@ class componentController extends Controller
 
         /* QUERY PM10 DIAGRAM LINE & DIAGRAM BATANG */
         // -- Diagram line PM10 --//
+        
         // $dataPM = DB::table('node_b')->where(DB::raw('DATE_ADD(TIME(created_at), INTERVAL 24 HOUR)'), '<', Carbon::now('GMT+7'))->get(); 
         $dataPM = DB::table('node_b')
                     ->where('created_at', '>', DB::raw('DATE_SUB(NOW(), INTERVAL 24 HOUR)'))

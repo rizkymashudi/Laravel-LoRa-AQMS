@@ -53,6 +53,7 @@ class ISPU{
         return $average;
     }
     
+    //PM10
     public function countPM($xX){
         
         /* Ambien BATAS ATAS DAN ambien BATAS BAWAH */
@@ -99,6 +100,7 @@ class ISPU{
         return round($I);
     }
 
+    //SO2
     public function countSO($xX){
         
         /* Ambien BATAS ATAS DAN ambien BATAS BAWAH */
@@ -144,6 +146,7 @@ class ISPU{
         return round($I);
     }
 
+    //CO2
     public function countCO($xX){
         
         /* Ambien BATAS ATAS DAN ambien BATAS BAWAH */
@@ -189,6 +192,7 @@ class ISPU{
         return round($I);
     }
 
+    //O3
     public function countO($xX){
         
         /* Ambien BATAS ATAS DAN ambien BATAS BAWAH */
@@ -234,6 +238,7 @@ class ISPU{
         return round($I);
     }
 
+    //NO2
     public function countNO($xX){
         
         /* Ambien BATAS ATAS DAN ambien BATAS BAWAH */
