@@ -16,3 +16,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'componentController@index')->name('dashboard');
 Route::get('/About', 'aboutController@index')->name('About');
 Route::get('/Misc', 'miscellaneousController@index')->name('Misc');
+// Route::get('/Hist', 'historyController@index')->name('History');

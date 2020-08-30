@@ -20,26 +20,32 @@ class componentController extends Controller
         // -- Diagram line PM10 --//
         
         // $dataPM = DB::table('node_b')->where(DB::raw('DATE_ADD(TIME(created_at), INTERVAL 24 HOUR)'), '<', Carbon::now('GMT+7'))->get(); 
+        // $dataPM = DB::table('node_b')
+        //             ->where('created_at', '>', DB::raw('DATE_SUB(NOW(), INTERVAL 24 HOUR)'))
+        //             ->where('created_at', '<=', Carbon::now('GMT+7'))
+        //             ->get();
+        // // -- END Diagram line PM10 -- //
+
+        // // -- Diagram batang PM10 -- //
+        // $payload = '';
+        // $countdata = 0;
+
+        // foreach($dataPM as $pm):
+        //     $payload .= $obj->countPM($pm->payload);  
+        //     if($countdata != count($dataPM) - 1):
+        //         $payload .= ','; 
+        //     endif;
+        //     $countdata = $countdata+ 1; 
+        // endforeach;
+
+        // //avg data pm10
+        // $PM10 = round($obj->avg($payload)); 
+
         $dataPM = DB::table('node_b')
-                    ->where('created_at', '>', DB::raw('DATE_SUB(NOW(), INTERVAL 24 HOUR)'))
-                    ->where('created_at', '<=', Carbon::now('GMT+7'))
-                    ->get();
-        // -- END Diagram line PM10 -- //
+                    ->select(DB::raw('AVG(payload) as payloadtotal'))
+                    ->first();
 
-        // -- Diagram batang PM10 -- //
-        $payload = '';
-        $countdata = 0;
-
-        foreach($dataPM as $pm):
-            $payload .= $obj->countPM($pm->payload);  
-            if($countdata != count($dataPM) - 1):
-                $payload .= ','; 
-            endif;
-            $countdata = $countdata+ 1; 
-        endforeach;
-
-        //avg data pm10
-        $PM10 = round($obj->avg($payload)); 
+        $PM10 = $obj->countPM(round($dataPM->payloadtotal));
 
         // -- END Diagram batang PM 10 -- //
         /* END QUERY PM10 DIAGRAM LINE & DIAGRAM BATANG */

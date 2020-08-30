@@ -2,11 +2,11 @@
 
 @section('content')
      <!-- Content Header (Page header) -->
-     <div class="content-header">
+      <div class="content-header">
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0 text-dark">Air Quality Monitoring System LoRa</h1>
+              <h1 class="m-0 aqms" style="color: #1b2a4e;">Air Quality Monitoring System LoRa</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
@@ -24,58 +24,38 @@
         <div class="row">
           <div class="col">
             <!-- BAR CHART -->
-            <div class="card card-dark">
+            <div class="card">
               <div class="card-header">
-                <h3 class="card-title">Grafik Index Standar Pencemaran Udara (ISPU)</h3>
-                <div class="card-tools">
+                <h3 class="card-title judul">Grafik Index Standar Pencemaran Udara (ISPU)</h3>
+                <div class="card-tools minimize">
                   <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
                 </div>
               </div>
               <div class="card-body">
                 <div class="chart">
-                  <canvas id="barChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                  <canvas class="batang" id="barChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                 </div>
-                <div class="container">
-                  <div class="row">
-                    <div class="col text-center">
-                      <table border="0" style="margin:auto; margin-top:auto; margin-bottom:auto; height:15px;">
-                        <tr>
-                          <td valign="middle"><div class="square" style="background-color: green;"></div></td>
-                          <td valign="middle"><p style="margin:auto; font-size:15px;">0 - 50 &nbsp; : &nbsp; Baik</p></td>
-                        </tr>
-                      </table>
+                <div class="containertest">
+                  <div class="row" style="height: 20px;">
+                    <div class="col d-flex justify-content-center">
+                      <div class="square vertical-center" style="background-color: green; margin-right: 80px;"></div>
+                      <p class="indicator vertical-center" style="margin-left: 13px;">0 - 50 &nbsp; : &nbsp; Baik</p>
                     </div>
-                    <div class="col text-center">
-                      <table style="margin:auto; margin-top:auto; margin-bottom:auto; height:15px;">
-                        <tr>
-                          <td valign="middle"><div class="square" style="background-color: blue;"></div></td>
-                          <td valign="middle"><p style="margin:auto; font-size:15px;">51 - 100 &nbsp; : &nbsp; Sedang</p></td>
-                        </tr>
-                        </table>
+                    <div class="col d-flex justify-content-center">
+                      <div class="square vertical-center" style="background-color: blue; margin-right: 130px;"></div>
+                      <p class="indicator vertical-center" style="margin-left: 13px;">51 - 100 &nbsp; : &nbsp; Sedang</p>
                     </div>
-                    <div class="col text-center">
-                      <table style="margin:auto; margin-top:auto; margin-bottom:auto; height:15px;">
-                        <tr>
-                          <td valign="middle"><div class="square" style="background-color: yellow;"></div></td>
-                          <td valign="middle"><p style="margin:auto; font-size:15px;">101 - 199 &nbsp; : &nbsp; Tidak sehat</p></td>
-                        </tr>
-                      </table>
+                    <div class="col d-flex justify-content-center">
+                      <div class="square vertical-center" style="background-color: yellow; margin-right: 140px;"></div>
+                      <p class="indicator vertical-center" style="margin-left: 13px;">101 - 199 &nbsp; : &nbsp; Tidak sehat</p>
                     </div>
-                    <div class="col text-center">
-                      <table style="margin:auto; margin-top:auto;margin-bottom:auto;">
-                        <tr>
-                          <td valign="middle"><div class="square" style="background-color: red;"></div></td>
-                          <td valign="middle"><p style="margin:auto; font-size:15px;">200 - 299 &nbsp; : &nbsp; Sangat tidak sehat</p></td>
-                        </tr>
-                      </table>
+                    <div class="col d-flex justify-content-center">
+                      <div class="square vertical-center" style="background-color: red; margin-right: 178px;"></div>
+                      <p class="indicator vertical-center" style="margin-left: 13px;">200 - 299 &nbsp; : &nbsp; Sangat tidak sehat</p>
                     </div>
-                    <div class="col text-center">
-                      <table style="margin:auto; margin-top:auto; margin-bottom:auto; height:15px;">
-                        <tr>
-                          <td valign="middle"><div class="square" style="background-color: black;"></td>
-                          <td valign="middle"><p style="margin:auto; font-size:15px;">300 - lebih &nbsp; : &nbsp; Berbahaya</p></td>
-                        </tr>
-                      </table>
+                    <div class="col d-flex justify-content-center">
+                      <div class="square vertical-center" style="background-color: black; margin-right: 150px;"></div>
+                      <p class="indicator vertical-center" style="margin-left: 13px; width: 140px;">300 - lebih &nbsp; : &nbsp; Berbahaya</p>
                     </div>
                   </div>
                 </div>
@@ -88,10 +68,10 @@
 
               <!-- SENSOR MAP LOCATION -->
               <div class="col-md-6">
-                <div class="card card-dark">
+                <div class="card">
                   <div class="card-header">
-                    <h3 class="card-title">Lokasi Sensor</h3>
-                    <div class="card-tools">
+                    <h3 class="card-title judul">Lokasi Sensor</h3>
+                    <div class="card-tools minimize">
                       <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
                     </div>
                   </div>
@@ -116,10 +96,10 @@
               
               <!-- CAROUSELL GRAFIK PER PARTIKULAT -->
               <div class="col-md-6">
-                <div class="card card-dark">
+                <div class="card">
                   <div class="card-header">
-                    <h3 class="card-title">Grafik per partikulat</h3>
-                    <div class="card-tools">
+                    <h3 class="card-title judul">Grafik per partikulat</h3>
+                    <div class="card-tools minimize">
                       <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
                     </div>
                   </div>
@@ -139,10 +119,7 @@
                           <div class="col-md-15" alt="first slide">
                             <div class="card">
                               <div class="card-header">
-                                <h3 class="card-title">Grafik PM<sub>10</sub></h3>
-                                <div class="card-tools">
-                                  <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
-                                </div>
+                                <h3 class="card-title judul">Grafik PM<sub>10</sub></h3>
                               </div>
                               <div class="card-body">
                                 <div class="chart">
@@ -150,12 +127,8 @@
                                 </div>
                                 <div class="container">
                                   <div class="row">
-                                    <div class="col text-center">
-                                      <table border="0" style="margin:auto; margin-top:auto; margin-bottom:auto; height:15px;">
-                                        <tr>
-                                          <td valign="middle"><p style="margin:auto; font-size:15px;">Particulate Matter, PM<sub>10</sub> (Periode Pengukuran Rata-rata 1 Jam) &#181;g / m<sup>3</sup></p></td>
-                                        </tr>
-                                      </table>
+                                    <div class="col d-flex justify-content-center cols">
+                                        <p class="Partikel" style="margin:auto;">Particulate Matter, PM<sub>10</sub> (Periode Pengukuran Rata-rata 1 Jam) &#181;g / m<sup>3</sup></p></td>
                                     </div>
                                   </div>
                                 </div>
@@ -169,10 +142,7 @@
                           <div class="col-md-15" alt="second slide">
                             <div class="card">
                               <div class="card-header">
-                                <h3 class="card-title">Grafik SO<sub>2</sub></h3>
-                                <div class="card-tools">
-                                  <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
-                                </div>
+                                <h3 class="card-title judul">Grafik SO<sub>2</sub></h3>
                               </div>
                               <div class="card-body">
                                 <div class="chart">
@@ -180,12 +150,8 @@
                                 </div>
                                 <div class="container">
                                   <div class="row">
-                                    <div class="col text-center">
-                                      <table border="0" style="margin:auto; margin-top:auto; margin-bottom:auto; height:15px;">
-                                        <tr>
-                                          <td valign="middle"><p style="margin:auto; font-size:15px;">Sulfur Dioksida, SO<sub>2</sub> (Periode Pengukuran Rata-rata 1 Jam) &#181;g / m<sup>3</sup></p></td>
-                                        </tr>
-                                      </table>
+                                    <div class="col d-flex justify-content-center cols">
+                                      <p class="Partikel" style="margin:auto;">Sulfur Dioksida, SO<sub>2</sub> (Periode Pengukuran Rata-rata 1 Jam) &#181;g / m<sup>3</sup></p>
                                     </div>
                                   </div>
                                 </div>
@@ -199,10 +165,7 @@
                           <div class="col-md-15" alt="third slide">
                             <div class="card">
                               <div class="card-header">
-                                <h3 class="card-title">Grafik CO<sub>2</sub></h3>
-                                <div class="card-tools">
-                                  <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
-                                </div>
+                                <h3 class="card-title judul">Grafik CO<sub>2</sub></h3>
                               </div>
                               <div class="card-body">
                                 <div class="chart">
@@ -210,12 +173,8 @@
                                 </div>
                                 <div class="container">
                                   <div class="row">
-                                    <div class="col text-center">
-                                      <table border="0" style="margin:auto; margin-top:auto; margin-bottom:auto; height:15px;">
-                                        <tr>
-                                          <td valign="middle"><p style="margin:auto; font-size:15px;">Carbon monoksida, CO<sub>2</sub> (Periode Pengukuran Rata-rata 1 Jam) &#181;g / m<sup>3</sup></p></td>
-                                        </tr>
-                                      </table>
+                                    <div class="col d-flex justify-content-center cols">
+                                      <p class="Partikel" style="margin:auto;">Carbon monoksida, CO<sub>2</sub> (Periode Pengukuran Rata-rata 1 Jam) &#181;g / m<sup>3</sup></p>
                                     </div>
                                   </div>
                                 </div>
@@ -229,10 +188,7 @@
                           <div class="col-md-15" alt="fourth slide">
                             <div class="card">
                               <div class="card-header">
-                                <h3 class="card-title">Grafik O<sub>3</sub></h3>
-                                <div class="card-tools">
-                                  <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
-                                </div>
+                                <h3 class="card-title judul">Grafik O<sub>3</sub></h3>
                               </div>
                               <div class="card-body">
                                 <div class="chart">
@@ -240,12 +196,8 @@
                                 </div>
                                 <div class="container">
                                   <div class="row">
-                                    <div class="col text-center">
-                                      <table border="0" style="margin:auto; margin-top:auto; margin-bottom:auto; height:15px;">
-                                        <tr>
-                                          <td valign="middle"><p style="margin:auto; font-size:15px;">Ozon, O<sub>3</sub> (Periode Pengukuran Rata-rata 1 Jam) &#181;g / m<sup>3</sup></p></td>
-                                        </tr>
-                                      </table>
+                                    <div class="col d-flex justify-content-center cols">
+                                      <p class="Partikel" style="margin:auto;">Ozon, O<sub>3</sub> (Periode Pengukuran Rata-rata 1 Jam) &#181;g / m<sup>3</sup></p>
                                     </div>
                                   </div>
                                 </div>
@@ -259,10 +211,7 @@
                           <div class="col-md-15" alt="fifth slide">
                             <div class="card">
                               <div class="card-header">
-                                <h3 class="card-title">Grafik NO<sub>2</sub></h3>
-                                <div class="card-tools">
-                                  <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
-                                </div>
+                                <h3 class="card-title judul">Grafik NO<sub>2</sub></h3>
                               </div>
                               <div class="card-body">
                                 <div class="chart">
@@ -270,12 +219,8 @@
                                 </div>
                                 <div class="container">
                                   <div class="row">
-                                    <div class="col text-center">
-                                      <table border="0" style="margin:auto; margin-top:auto; margin-bottom:auto; height:15px;">
-                                        <tr>
-                                          <td valign="middle"><p style="margin:auto; font-size:15px;">Nitrogen Dioksida, NO<sub>2</sub> (Periode Pengukuran Rata-rata 1 Jam) &#181;g / m<sup>3</sup></p></td>
-                                        </tr>
-                                      </table>
+                                    <div class="col d-flex justify-content-center cols">
+                                      <p class="Partikel" style="margin:auto;">Nitrogen Dioksida, NO<sub>2</sub> (Periode Pengukuran Rata-rata 1 Jam) &#181;g / m<sup>3</sup></p>
                                     </div>
                                   </div>
                                 </div>
@@ -326,7 +271,7 @@
     <script>
       //interval carousel
       $(document).ready(function(){
-        $("#carouselExampleIndicators").carousel({interval: 4000});
+        $("#carouselExampleIndicators").carousel({interval: 5000});
       });
 
       var chartColors = {
@@ -540,8 +485,9 @@
           return moment().add(days, 'd');
         }
         
+        
         var lineChartPMData = {
-          labels  : [ @php $counter = 0; @endphp @foreach($dataPM as $dt) @php $datetotime = date_create($dt->created_at); @endphp  '{{date_format($datetotime,"D H:i")}}' @if($counter != count( $dataPM ) - 1),@endif @php  $counter = $counter + 1;  @endphp @endforeach],
+          labels  : [ '01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00', '00:00' ],
           datasets: [
             {
               label               : PM10,
@@ -549,7 +495,7 @@
               pointBorderWidth    : 3,
               fill                : false,
               lineTension         : 0,
-              data                : [@php $countdatalast = 0; @endphp @foreach($dataPM as $pl) {{ $obj->countPM($pl->payload) }}@if($countdatalast != count($dataPM) -1), @endif @php $countdatalast = $countdatalast + 1; @endphp @endforeach]
+              data                : [ {{ $PM10 }}, 30, 40, 20, 55 ]
             }
           ]
         }
@@ -573,10 +519,10 @@
                   max : 500,
                   stepSize : 100
                 },
-                scaleLabel: {
-                  display: true,
-                  labelString: 'ISPU'
-                }
+                // scaleLabel: {
+                //   display: true,
+                //   labelString: 'ISPU'
+                // }
               }],
           },
           
@@ -625,10 +571,10 @@
                   max : 500,
                   stepSize : 100
                 },
-                scaleLabel: {
-                  display: true,
-                  labelString: 'ISPU'
-                }
+                // scaleLabel: {
+                //   display: true,
+                //   labelString: 'ISPU'
+                // }
               }],
               // xAxes: [{
               //   barPercentage: 0.4
@@ -679,10 +625,10 @@
                   max : 500,
                   stepSize : 100
                 },
-                scaleLabel: {
-                  display: true,
-                  labelString: 'ISPU'
-                }
+                // scaleLabel: {
+                //   display: true,
+                //   labelString: 'ISPU'
+                // }
               }],
               
           }
@@ -733,10 +679,10 @@
                   max : 500,
                   stepSize : 100
                 },
-                scaleLabel: {
-                  display: true,
-                  labelString: 'ISPU'
-                }
+                // scaleLabel: {
+                //   display: true,
+                //   labelString: 'ISPU'
+                // }
               }],
               // xAxes: [{
               //   barPercentage: 0.4
@@ -790,10 +736,10 @@
                   max : 500,
                   stepSize : 100
                 },
-                scaleLabel: {
-                  display: true,
-                  labelString: 'ISPU'
-                }
+                // scaleLabel: {
+                //   display: true,
+                //   labelString: 'ISPU'
+                // }
               }],
               // xAxes: [{
               //   barPercentage: 0.4

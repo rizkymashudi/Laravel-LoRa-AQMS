@@ -3,10 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\RentangISPU;
+use DB;
 
 class miscellaneousController extends Controller
 {
     public function index(){
-        return view('pages.miscellaneous');
+
+        $rentangISPU = DB::table('_ispu_info_')->get();
+
+        return view('pages.miscellaneous', compact('rentangISPU'));
     }
 }
