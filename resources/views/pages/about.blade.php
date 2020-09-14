@@ -12,13 +12,13 @@
 			<div class="row mt-5">
 				<div class="col-md-4 text-center" style="margin-left: auto; margin-right:auto;text-align: center">
 					<div class="card text" style="width: 18rem; margin-left: auto; margin-right:auto;">
-						<img class="card-img-top" src="pp.jpg" alt="Card image cap">
+						<img class="card-img-top" src="{{ asset('images/Logo/logo.png') }}" alt="Card image cap">
 						<div class="card-body">
-							<p class="card-text" style="color: #1b2a4e">
+							<p class="card-text" style="color: #1b2a4e font-size: 5px;">
 								<b>Rizky mashudi</b><br>
-								junior web programmer
+								junior web developer
 								<br><br>
-								Web Designer - Programmer - Tester
+								Web Designer - Web developer - Tester
 							</p>
 						</div>
 					</div>
@@ -31,7 +31,7 @@
 	<div class="row mt-1">
 		<div class="col-12" style="color: #1b2a4e">
 			<h3 class="text-center text-abu1 mt-4">"an astrophile person"</h3><br>
-			<h3 class="text-center text-abu1">"besok <b>weekend</b>"</h3>
+			{{-- <h3 class="text-center text-abu1">"besok <b>weekend</b>"</h3> --}}
 		</div>
 	</div>
 	<div class="row mt-5">
@@ -49,7 +49,7 @@
 					</a>
 		
 					{{-- twitter --}}
-					<a class="icn col-xl-6 " href="https://twitter.com/slplessjnkie" target="_blank">
+					<a class="icn col-xl-6 " href="https://twitter.com/SlplessJunkie" target="_blank">
 						<i class="fab fa-twitter fa-lg white-text fa-2x"> </i>
 					</a>
 		

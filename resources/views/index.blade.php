@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>AQMS LoRa</title>
-    <link rel="icon" href="{{ url('AdminLTE/dist/img/A.png') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('images/Logo/favicon.png') }}" type="image/x-icon">
     <!-- Tell the browser to be responsive to screen width -->
     {{-- <meta name="viewport" content="width=device-width, initial-scale=1"> --}}
     <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
@@ -70,7 +70,7 @@
       <aside class="main-sidebar elevation-4" style="background-color: white;">
         <!-- Brand Logo -->
         <a href="{{ route('dashboard') }}" class="brand-link">
-          <img src="{{ url('AdminLTE/dist/img/A.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3 logo"
+          <img src="{{ asset('images/Logo/favicon.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3 logo"
               style="opacity: .8">
           <span class="brand-text font-weight-regular" style="color: #1b2a4e;">AQMS LoRa</span>
         </a>

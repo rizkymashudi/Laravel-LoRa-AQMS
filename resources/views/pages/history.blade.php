@@ -66,6 +66,7 @@
     
 @endsection --}}
 
+{{-- Looping realtime for line chart --}}
 {{-- // LABEL
         // @php $counter = 0; @endphp @foreach($dataPM as $dt) @php $datetotime = date_create($dt->created_at); @endphp  '{{date_format($datetotime,"D H:i")}}' @if($counter != count( $dataPM ) - 1),@endif @php  $counter = $counter + 1;  @endphp @endforeach
 
