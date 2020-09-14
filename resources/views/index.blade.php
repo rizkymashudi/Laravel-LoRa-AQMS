@@ -72,7 +72,7 @@
         <a href="{{ route('dashboard') }}" class="brand-link">
           <img src="{{ url('AdminLTE/dist/img/A.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3 logo"
               style="opacity: .8">
-          <span class="brand-text font-weight-light" style="color: #1b2a4e;">AQMS LoRa</span>
+          <span class="brand-text font-weight-regular" style="color: #1b2a4e;">AQMS LoRa</span>
         </a>
 
         <!-- Sidebar -->
