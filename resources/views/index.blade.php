@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="refresh" content="36"/>
+
     <title>AQMS LoRa</title>
     <link rel="icon" href="{{ asset('images/Logo/favicon.png') }}" type="image/x-icon">
     <!-- Tell the browser to be responsive to screen width -->
@@ -102,6 +104,10 @@
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     <script>
       $.widget.bridge('uibutton', $.ui.button)
+
+      setTimeout(function(){
+        window.location.reload(1);
+      }, 3600000);
     </script>
     <!-- Bootstrap 4 -->
     <script src="{{ asset('AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
