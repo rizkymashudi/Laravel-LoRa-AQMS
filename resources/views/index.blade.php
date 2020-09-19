@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="refresh" content="36"/>
+    <meta http-equiv="refresh" content="3600"/>
 
     <title>AQMS LoRa</title>
     <link rel="icon" href="{{ asset('images/Logo/favicon.png') }}" type="image/x-icon">
