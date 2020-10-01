@@ -968,6 +968,22 @@
         color: colorPM10
       };
 
+      nodePoints[5] = {
+        center: new google.maps.LatLng(1.118484, 104.048437),
+        id: 5,
+        addr: '<div id="content">' +
+              '<div id="siteNotice">' +
+              "</div>" +
+              '<h5 id="firstHeading" class="firstHeading">LoRa Gateway</h5>' +
+              '<div id="bodyContent">' +
+              "<p><b>Gedung Utama Politeknik Negeri Batam</b></p>" +
+              "Device: Raspberry pi B + Dragino Raspberry Pi LoRa/GPS HAT" +
+              "</div>" +
+              "</div>",
+        magnitude: 10,
+        color: 'rgb(255, 77, 0)'
+      }
+
       var nodeCircle;
       var infoWindow = new google.maps.InfoWindow();
       
@@ -977,6 +993,7 @@
           center: new google.maps.LatLng(1.118709, 104.048585),
           mapTypeId: google.maps.MapTypeId.ROADMAP
         };
+
 
         var map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
@@ -996,6 +1013,7 @@
           };
 
         nodeCircle = new google.maps.Circle(magnitudeOptions);
+      
 
         google.maps.event.addListener(nodeCircle, 'click', (function(nodeCircle, i) {
           console.log('aaa');
@@ -1009,7 +1027,51 @@
       } 
       google.maps.event.addDomListener(window, 'load', initialize);
 
+  
       /*======================== END GMAPS API ========================*/
     </script>
 
+    {{-- <script>
+      function initMap() {
+        const GU = { lat: 1.118484, lng: 104.048437 };
+        const maps = new google.maps.Map(document.getElementById("map"), {
+          zoom: 17,
+          center: GU,
+        });
+
+        const contentString =
+          '<div id="content">' +
+          '<div id="siteNotice">' +
+          "</div>" +
+          '<h1 id="firstHeading" class="firstHeading">Uluru</h1>' +
+          '<div id="bodyContent">' +
+          "<p><b>Uluru</b>, also referred to as <b>Ayers Rock</b>, is a large " +
+          "sandstone rock formation in the southern part of the " +
+          "Northern Territory, central Australia. It lies 335&#160;km (208&#160;mi) " +
+          "south west of the nearest large town, Alice Springs; 450&#160;km " +
+          "(280&#160;mi) by road. Kata Tjuta and Uluru are the two major " +
+          "features of the Uluru - Kata Tjuta National Park. Uluru is " +
+          "sacred to the Pitjantjatjara and Yankunytjatjara, the " +
+          "Aboriginal people of the area. It has many springs, waterholes, " +
+          "rock caves and ancient paintings. Uluru is listed as a World " +
+          "Heritage Site.</p>" +
+          '<p>Attribution: Uluru, <a href="https://en.wikipedia.org/w/index.php?title=Uluru&oldid=297882194">' +
+          "https://en.wikipedia.org/w/index.php?title=Uluru</a> " +
+          "(last visited June 22, 2009).</p>" +
+          "</div>" +
+          "</div>";
+
+        const infowindow = new google.maps.InfoWindow({
+          content: contentString,
+        });
+        const marker = new google.maps.Marker({
+          position: GU,
+          maps,
+          title: "Uluru (Ayers Rock)",
+        });
+        marker.addListener("click", () => {
+          infowindow.open(maps, marker);
+        });
+      }
+    </script> --}}
 @endsection
