@@ -13,7 +13,7 @@ class CreateIspuInfoTable extends Migration
      */
     public function up()
     {
-        Schema::create('_ispu_info_', function (Blueprint $table) {
+        Schema::create('ispu_info', function (Blueprint $table) {
             $table->increments('id');
             $table->string('Kategori');
             $table->string('Rentang');
@@ -28,6 +28,6 @@ class CreateIspuInfoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('_ispu_info_');
+        Schema::dropIfExists('ispu_info');
     }
 }

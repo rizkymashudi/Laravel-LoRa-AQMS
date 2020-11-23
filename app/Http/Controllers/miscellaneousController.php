@@ -10,7 +10,7 @@ class miscellaneousController extends Controller
 {
     public function index(){
 
-        $rentangISPU = DB::table('_ispu_info_')->get();
+        $rentangISPU = DB::table('ispu_info')->get();
 
         return view('pages.miscellaneous', compact('rentangISPU'));
     }
