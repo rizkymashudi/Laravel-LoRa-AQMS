@@ -186,8 +186,9 @@ class ISPU{
             echo 'not found';
         endif;
 
+        
         // Mari berhitung
-        $I = (($Ia-$Ib) / ($Xa - $Xb)) * ($xX - $Xb) + $Ib;
+        $I = (($Ia - $Ib) / ($Xa - $Xb)) * ($xX - $Xb) + $Ib;
 
         return round($I);
     }

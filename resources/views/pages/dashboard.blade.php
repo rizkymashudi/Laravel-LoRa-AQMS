@@ -63,7 +63,7 @@
             </div>
             <!-- END BAR CHART -->
 
-            <!-- ROW MAP LOCATION & CAROUESELL-->
+            <!-- ROW MAP LOCATION & CAROuSELL-->
             <div class="row">
 
               <!-- SENSOR MAP LOCATION -->
@@ -113,8 +113,50 @@
                         <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
                         <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
                       </ol>
-                      <div class="carousel-inner">
+
+                      <div class="card">
+                        <div class="card-header">
+                          <h3 class="card-title judul">Grafik CO<sub>2</sub></h3>
+                        </div>
+                        <div class="card-body">
+                          <div class="chart">
+                            <canvas id="lineChartCO" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                          </div>
+                          <div class="container">
+                            <div class="row">
+                              <div class="col d-flex justify-content-center cols">
+                                <p class="Partikel" style="margin:auto;">Carbon monoksida, CO<sub>2</sub> (Periode Pengukuran Rata-rata 1 Jam)</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {{-- <div class="carousel-inner">
                         <div class="carousel-item active">
+                          <!-- GRAFIK CO2 -->
+                          <div class="col-md-15" alt="third slide">
+                            <div class="card">
+                              <div class="card-header">
+                                <h3 class="card-title judul">Grafik CO<sub>2</sub></h3>
+                              </div>
+                              <div class="card-body">
+                                <div class="chart">
+                                  <canvas id="lineChartCO" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                                </div>
+                                <div class="container">
+                                  <div class="row">
+                                    <div class="col d-flex justify-content-center cols">
+                                      <p class="Partikel" style="margin:auto;">Carbon monoksida, CO<sub>2</sub> (Periode Pengukuran Rata-rata 1 Jam)</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <!-- END GRAFIK CO2 -->
+                        </div>
+                        <div class="carousel-item">
                           <!-- GRAFIK PM10 -->
                           <div class="col-md-15" alt="first slide">
                             <div class="card">
@@ -159,29 +201,6 @@
                             </div>
                           </div>
                           <!-- END GRAFIK SO2 -->
-                        </div>
-                        <div class="carousel-item">
-                          <!-- GRAFIK CO2 -->
-                          <div class="col-md-15" alt="third slide">
-                            <div class="card">
-                              <div class="card-header">
-                                <h3 class="card-title judul">Grafik CO<sub>2</sub></h3>
-                              </div>
-                              <div class="card-body">
-                                <div class="chart">
-                                  <canvas id="lineChartCO" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-                                </div>
-                                <div class="container">
-                                  <div class="row">
-                                    <div class="col d-flex justify-content-center cols">
-                                      <p class="Partikel" style="margin:auto;">Carbon monoksida, CO<sub>2</sub> (Periode Pengukuran Rata-rata 1 Jam) &#181;g / m<sup>3</sup></p>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <!-- END GRAFIK CO2 -->
                         </div>
                         <div class="carousel-item">
                           <!-- GRAFIK O3 -->
@@ -229,7 +248,7 @@
                           </div>
                           <!-- END GRAFIK NO2 -->
                         </div>
-                      </div>
+                      </div> --}}
                       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
@@ -247,6 +266,79 @@
               <!-- END CAROUSELL GRAFIK PER PARTIKULAT-->
             </div>
             <!-- END ROW MAP LOCATION & CAROUSELL-->
+
+            {{-- <div class="card">
+              <div class="card-header">
+                <h3 class="card-title judul">Table uji coba</h3>
+                <div class="card-tools minimize">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i></button>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="table">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>id</th>
+                        <th>hardware serial</th>
+                        <th>port</th>
+                        <th>counter</th>
+                        <th>payload_raw</th>
+                        <th>time</th>
+                        <th>frequency</th>
+                        <th>modulation</th>
+                        <th>data_Rate</th>
+                        <th>airtime</th>
+                        <th>coding_rate</th>
+                        <th>gateways</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      @foreach ($payload as $pay)
+                          <tr>
+                            <td>{{ $pay->id }}</td>
+                            <td>{{ $pay->hardware_serial }}</td>
+                            <td>{{ $pay->port }}</td>
+                            <td>{{ $pay->counter }}</td>
+                            <td>{{ $pay->payload_raw }}</td>
+                            <td>{{ $pay->time }}</td>
+                            <td>{{ $pay->frequency }}</td>
+                            <td>{{ $pay->modulation }}</td>
+                            <td>{{ $pay->data_rate }}</td>
+                            <td>{{ $pay->airtime }}</td>
+                            <td>{{ $pay->coding_rate }}</td>
+                            <td>{{ $pay->gateways }}</td>
+                          </tr>
+                      @endforeach
+                    </tbody>
+                  </table>
+                </div>
+                <div class="containertest">
+                  <div class="row" style="height: 20px;">
+                    <div class="col d-flex justify-content-center">
+                      <div class="square vertical-center" style="background-color: green; margin-right: 80px;"></div>
+                      <p class="indicator vertical-center" style="margin-left: 13px;">0 - 50 &nbsp; : &nbsp; Baik</p>
+                    </div>
+                    <div class="col d-flex justify-content-center">
+                      <div class="square vertical-center" style="background-color: blue; margin-right: 130px;"></div>
+                      <p class="indicator vertical-center" style="margin-left: 13px;">51 - 100 &nbsp; : &nbsp; Sedang</p>
+                    </div>
+                    <div class="col d-flex justify-content-center">
+                      <div class="square vertical-center" style="background-color: yellow; margin-right: 140px;"></div>
+                      <p class="indicator vertical-center" style="margin-left: 13px;">101 - 199 &nbsp; : &nbsp; Tidak sehat</p>
+                    </div>
+                    <div class="col d-flex justify-content-center">
+                      <div class="square vertical-center" style="background-color: red; margin-right: 178px;"></div>
+                      <p class="indicator vertical-center" style="margin-left: 13px;">200 - 299 &nbsp; : &nbsp; Sangat tidak sehat</p>
+                    </div>
+                    <div class="col d-flex justify-content-center">
+                      <div class="square vertical-center" style="background-color: black; margin-right: 150px;"></div>
+                      <p class="indicator vertical-center" style="margin-left: 13px; width: 140px;">300 - lebih &nbsp; : &nbsp; Berbahaya</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> --}}
 
           </div> <!-- END CONTENT COLUMN -->
        </div><!-- END CONTENT ROW -->
@@ -284,10 +376,7 @@
 
       // ========== CHART JS ============ //
       $(function () {
-        /* ChartJS
-         * -------
-         * Here we will create a few charts using ChartJS
-         */
+        
 
         //------------------
         //- BAR CHART ISPU -
@@ -295,31 +384,31 @@
     
         // Get context with jQuery - using jQuery's .get() method.
         
-        // variable PM10
-        var PM  = 'PM'
-        var satu = "\u2081" //unicode 1
-        var nol = "\u2080"  //unicode 0
-        var PM10 = PM+satu+nol
+        // // variable PM10
+        // var PM  = 'PM'
+        // var satu = "\u2081" //unicode 1
+        // var nol = "\u2080"  //unicode 0
+        // var PM10 = PM+satu+nol
 
-        // variable SO2
-        var SO = 'SO'
-        var dua= '\u2082' //unicode 2
-        var SO2= SO+dua
+        // // variable SO2
+        // var SO = 'SO'
+        // var dua= '\u2082' //unicode 2
+        // var SO2= SO+dua
 
         // variable CO2
         var CO = 'CO'
         var two= '\u2082' //unicode 2
         var CO2=  CO+two
 
-        // variable O3
-        var O = "O"
-        var tiga = "\u2083" //unicode 3
-        var O3 = O+tiga
+        // // variable O3
+        // var O = "O"
+        // var tiga = "\u2083" //unicode 3
+        // var O3 = O+tiga
 
-        // variable NO2
-        var NO = "NO"
-        var loro = "\u2082" //unicode 2
-        var NO2 = NO+loro
+        // // variable NO2
+        // var NO = "NO"
+        // var loro = "\u2082" //unicode 2
+        // var NO2 = NO+loro
 
         var areaChartData = {
           labels  : [ PM10, SO2, CO2, O3, NO2 ],
@@ -486,123 +575,123 @@
         }
         
         
-        var lineChartPMData = {
-          labels  : [ '01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00', '00:00' ],
-          datasets: [
-            {
-              label               : PM10,
-              borderColor         : 'rgba(52, 189, 235)',
-              pointBorderWidth    : 3,
-              fill                : false,
-              lineTension         : 0,
-              data                : [ {{ $PM10 }}, 30, 40, 20, 55 ]
-            }
-          ]
-        }
+        // var lineChartPMData = {
+        //   labels  : [ '01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00', '00:00' ],
+        //   datasets: [
+        //     {
+        //       label               : PM10,
+        //       borderColor         : 'rgba(52, 189, 235)',
+        //       pointBorderWidth    : 3,
+        //       fill                : false,
+        //       lineTension         : 0,
+        //       data                : [ {{ $PM10 }}, 30, 40, 20, 55 ]
+        //     }
+        //   ]
+        // }
         
-        var lineChartPM = $('#lineChartPM').get(0).getContext('2d')
-        var chartPMData = jQuery.extend(true, {}, lineChartPMData)
-        var temp1       = lineChartPMData.datasets[0]
-        chartPMData.datasets[0] = temp1
+        // var lineChartPM = $('#lineChartPM').get(0).getContext('2d')
+        // var chartPMData = jQuery.extend(true, {}, lineChartPMData)
+        // var temp1       = lineChartPMData.datasets[0]
+        // chartPMData.datasets[0] = temp1
 
 
-        var PMChartOptions = {
-          responsive              : true,
-          maintainAspectRatio     : false,
-          datasetFill             : false,
-          scales: {
-              yAxes: [{
-                display: true,
-                stacked: true,
-                ticks: {
-                  min : 0,
-                  max : 500,
-                  stepSize : 100
-                },
-                // scaleLabel: {
-                //   display: true,
-                //   labelString: 'ISPU'
-                // }
-              }],
-          },
+        // var PMChartOptions = {
+        //   responsive              : true,
+        //   maintainAspectRatio     : false,
+        //   datasetFill             : false,
+        //   scales: {
+        //       yAxes: [{
+        //         display: true,
+        //         stacked: true,
+        //         ticks: {
+        //           min : 0,
+        //           max : 500,
+        //           stepSize : 100
+        //         },
+        //         // scaleLabel: {
+        //         //   display: true,
+        //         //   labelString: 'ISPU'
+        //         // }
+        //       }],
+        //   },
           
-        }
+        // }
 
-        var myLineChart = new Chart(lineChartPM, {
-            type: 'line',
-            data: chartPMData,
-            options: PMChartOptions
-        });
+        // var myLineChart = new Chart(lineChartPM, {
+        //     type: 'line',
+        //     data: chartPMData,
+        //     options: PMChartOptions
+        // });
         // END LINE CHART PM10 //
 
 
         //------------------
         //- LINE CHART SO2 -
         //------------------
-        var lineChartSOData = {
-          labels  : [ '01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00', '00:00'],
-          datasets: [
-            {
-              label               : SO2,
-              borderColor         : 'rgba(52, 189, 235)',
-              pointBorderWidth    : 3,
-              fill                : false,
-              lineTension         : 0,
-              data                : [{{ $NO2 }}, 150, 70, 20, 330, 80, 43]
-            }
-          ]
-        }
+        // var lineChartSOData = {
+        //   labels  : [ '01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00', '00:00'],
+        //   datasets: [
+        //     {
+        //       label               : SO2,
+        //       borderColor         : 'rgba(52, 189, 235)',
+        //       pointBorderWidth    : 3,
+        //       fill                : false,
+        //       lineTension         : 0,
+        //       data                : [{{ $NO2 }}, 150, 70, 20, 330, 80, 43]
+        //     }
+        //   ]
+        // }
         
-        var lineChartSO = $('#lineChartSO').get(0).getContext('2d')
-        var chartSOData = jQuery.extend(true, {}, lineChartSOData)
-        var temp2       = lineChartSOData.datasets[0]
-        chartSOData.datasets[0] = temp2
+        // var lineChartSO = $('#lineChartSO').get(0).getContext('2d')
+        // var chartSOData = jQuery.extend(true, {}, lineChartSOData)
+        // var temp2       = lineChartSOData.datasets[0]
+        // chartSOData.datasets[0] = temp2
 
-        var SOChartOptions = {
-          responsive              : true,
-          maintainAspectRatio     : false,
-          datasetFill             : false,
-          scales: {
-              yAxes: [{
-                display: true,
-                stacked: true,
-                ticks: {
-                  min : 0,
-                  max : 500,
-                  stepSize : 100
-                },
-                // scaleLabel: {
-                //   display: true,
-                //   labelString: 'ISPU'
-                // }
-              }],
-              // xAxes: [{
-              //   barPercentage: 0.4
-              // }]
-          }
-        }
+        // var SOChartOptions = {
+        //   responsive              : true,
+        //   maintainAspectRatio     : false,
+        //   datasetFill             : false,
+        //   scales: {
+        //       yAxes: [{
+        //         display: true,
+        //         stacked: true,
+        //         ticks: {
+        //           min : 0,
+        //           max : 500,
+        //           stepSize : 100
+        //         },
+        //         // scaleLabel: {
+        //         //   display: true,
+        //         //   labelString: 'ISPU'
+        //         // }
+        //       }],
+        //       // xAxes: [{
+        //       //   barPercentage: 0.4
+        //       // }]
+        //   }
+        // }
 
-        var myLineChartSO = new Chart(lineChartSO, {
-            type: 'line',
-            data: chartSOData,
-            options: SOChartOptions
-        });
+        // var myLineChartSO = new Chart(lineChartSO, {
+        //     type: 'line',
+        //     data: chartSOData,
+        //     options: SOChartOptions
+        // });
         // END LINE CHART SO2
 
 
         //------------------
-        //- LINE CHART CO2 -
+        //- LINE CHART CO -
         //------------------
         var lineChartCOData = {
-          labels  : ['01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00', '00:00'],
+          labels  : ['01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00'],
           datasets: [
             {
               label               : CO2,
               borderColor         : 'rgba(52, 189, 235)',
               pointBorderWidth    : 3,
-              fill                : false,
+              fill                 : false,
               lineTension         : 0,
-              data                : [{{ $NO2 }}, 150, 70, 20, 330, 80, 43]
+              data                : [{{ $graphicdata }}]
             }
           ]
         }
@@ -622,8 +711,8 @@
                 stacked: true,
                 ticks: {
                   min : 0,
-                  max : 500,
-                  stepSize : 100
+                  max : 20,
+                  stepSize : 2
                 },
                 // scaleLabel: {
                 //   display: true,
@@ -645,56 +734,56 @@
         //------------------
         //- LINE CHART O3  -
         //------------------
-        var lineChartOData = {
-          labels  : [ '01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00', '00:00'],
-          datasets: [
-            {
-              label               : O3,
-              borderColor         : 'rgba(52, 189, 235)',
-              pointBorderWidth    : 3,
-              fill                : false,
-              lineTension         : 0,
-              data                : [{{ $NO2 }}, 150, 70, 20, 330, 80, 43]
-            }
-          ]
-        }
+        // var lineChartOData = {
+        //   labels  : [ '01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00', '00:00'],
+        //   datasets: [
+        //     {
+        //       label               : O3,
+        //       borderColor         : 'rgba(52, 189, 235)',
+        //       pointBorderWidth    : 3,
+        //       fill                : false,
+        //       lineTension         : 0,
+        //       data                : [{{ $NO2 }}, 150, 70, 20, 330, 80, 43]
+        //     }
+        //   ]
+        // }
         
       
-        var lineChartO  = $('#lineChartO').get(0).getContext('2d')
-        var chartOData  = jQuery.extend(true, {}, lineChartOData)
-        var temp5       = lineChartOData.datasets[0]
-        chartOData.datasets[0] = temp5
+        // var lineChartO  = $('#lineChartO').get(0).getContext('2d')
+        // var chartOData  = jQuery.extend(true, {}, lineChartOData)
+        // var temp5       = lineChartOData.datasets[0]
+        // chartOData.datasets[0] = temp5
 
 
-        var OChartOptions = {
-          responsive              : true,
-          maintainAspectRatio     : false,
-          datasetFill             : false,
-          scales: {
-              yAxes: [{
-                display: true,
-                stacked: true,
-                ticks: {
-                  min : 0,
-                  max : 500,
-                  stepSize : 100
-                },
-                // scaleLabel: {
-                //   display: true,
-                //   labelString: 'ISPU'
-                // }
-              }],
-              // xAxes: [{
-              //   barPercentage: 0.4
-              // }]
-          }
-        }
+        // var OChartOptions = {
+        //   responsive              : true,
+        //   maintainAspectRatio     : false,
+        //   datasetFill             : false,
+        //   scales: {
+        //       yAxes: [{
+        //         display: true,
+        //         stacked: true,
+        //         ticks: {
+        //           min : 0,
+        //           max : 500,
+        //           stepSize : 100
+        //         },
+        //         // scaleLabel: {
+        //         //   display: true,
+        //         //   labelString: 'ISPU'
+        //         // }
+        //       }],
+        //       // xAxes: [{
+        //       //   barPercentage: 0.4
+        //       // }]
+        //   }
+        // }
 
-        var myLineChartO = new Chart(lineChartO, {
-            type: 'line',
-            data: chartOData,
-            options: OChartOptions
-        });
+        // var myLineChartO = new Chart(lineChartO, {
+        //     type: 'line',
+        //     data: chartOData,
+        //     options: OChartOptions
+        // });
         // END LINE CHART O3
 
 
@@ -702,56 +791,56 @@
         //- LINE CHART NO2 -
         //------------------
 
-        var lineChartNOData = {
-          labels  : [ '01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00', '00:00'],
-          datasets: [
-            {
-              label               : NO2,
-              borderColor         : 'rgba(52, 189, 235)',
-              pointBorderWidth    : 3,
-              fill                : false,
-              lineTension         : 0,
-              data                : [{{ $NO2 }}, 150, 70, 20, 330, 80, 43]
-            }
-          ]
-        }
+        // var lineChartNOData = {
+        //   labels  : [ '01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '21:00', '22:00', '23:00', '00:00'],
+        //   datasets: [
+        //     {
+        //       label               : NO2,
+        //       borderColor         : 'rgba(52, 189, 235)',
+        //       pointBorderWidth    : 3,
+        //       fill                : false,
+        //       lineTension         : 0,
+        //       data                : [{{ $NO2 }}, 150, 70, 20, 330, 80, 43]
+        //     }
+        //   ]
+        // }
         
       
-        var lineChartNO  = $('#lineChartNO').get(0).getContext('2d')
-        var chartNOData  = jQuery.extend(true, {}, lineChartNOData)
-        var temp6        = lineChartNOData.datasets[0]
-        chartNOData.datasets[0] = temp6
+        // var lineChartNO  = $('#lineChartNO').get(0).getContext('2d')
+        // var chartNOData  = jQuery.extend(true, {}, lineChartNOData)
+        // var temp6        = lineChartNOData.datasets[0]
+        // chartNOData.datasets[0] = temp6
 
 
-        var NOChartOptions = {
-          responsive              : true,
-          maintainAspectRatio     : false,
-          datasetFill             : false,
-          scales: {
-              yAxes: [{
-                display: true,
-                stacked: true,
-                ticks: {
-                  min : 0,
-                  max : 500,
-                  stepSize : 100
-                },
-                // scaleLabel: {
-                //   display: true,
-                //   labelString: 'ISPU'
-                // }
-              }],
-              // xAxes: [{
-              //   barPercentage: 0.4
-              // }]
-          }
-        }
+        // var NOChartOptions = {
+        //   responsive              : true,
+        //   maintainAspectRatio     : false,
+        //   datasetFill             : false,
+        //   scales: {
+        //       yAxes: [{
+        //         display: true,
+        //         stacked: true,
+        //         ticks: {
+        //           min : 0,
+        //           max : 500,
+        //           stepSize : 100
+        //         },
+        //         // scaleLabel: {
+        //         //   display: true,
+        //         //   labelString: 'ISPU'
+        //         // }
+        //       }],
+        //       // xAxes: [{
+        //       //   barPercentage: 0.4
+        //       // }]
+        //   }
+        // }
 
-        var myLineChartNO = new Chart(lineChartNO, {
-            type: 'line',
-            data: chartNOData,
-            options: NOChartOptions
-        });
+        // var myLineChartNO = new Chart(lineChartNO, {
+        //     type: 'line',
+        //     data: chartNOData,
+        //     options: NOChartOptions
+        // });
 
         // END LINE CHART NO2
 
@@ -882,9 +971,10 @@
 
       /* GMAP API FOR SENSOR LOCATION */
       var nodePoints = {};
-
+      // old coordinate of gateway
+      // center: new google.maps.LatLng(1.119679, 104.048445)
       nodePoints[0] = {
-        center: new google.maps.LatLng(1.119679, 104.048445),
+        center: new google.maps.LatLng(1.1491047553214442, 104.0235867971977),
         id: 0,
         addr: '<div id="content">' +
               '<div id="siteNotice">' +
@@ -896,80 +986,14 @@
               "keterangan : "+ indicationCO2 +"<br>" +
               "</div>" +
               "</div>",
-        magnitude: 40,
+        magnitude: 180,
         color: colorCO2
       };
 
+      //old coordinate of gateway
+      // center: new google.maps.LatLng(1.118484, 104.048437)
       nodePoints[1] = {
-        center: new google.maps.LatLng(1.119758, 104.049405),
-        id: 1,
-        addr: '<div id="content">' +
-              '<div id="siteNotice">' +
-              "</div>" +
-              '<h5 id="firstHeading" class="firstHeading">Sensor Node B</h5>' +
-              '<div id="bodyContent">' +
-              "Partikel udara : "+ O3 +"<br>" +
-              "Kadar ISPU : {{ $O3 }}<br>" +
-              "keterangan : "+ indicationO3 +"<br>" +
-              "</div>" +
-              "</div>",
-        magnitude: 40,
-        color: colorO3
-      };
-
-      nodePoints[2] = {
-        center: new google.maps.LatLng(1.118752, 104.050337),
-        id: 2,
-        addr: '<div id="content">' +
-              '<div id="siteNotice">' +
-              "</div>" +
-              '<h5 id="firstHeading" class="firstHeading">Sensor Node C</h5>' +
-              '<div id="bodyContent">' +
-              "Partikel udara : "+ NO2 +"<br>" +
-              "Kadar ISPU : {{ $NO2 }}<br>" +
-              "keterangan : "+ indicationNO2 +"<br>" +
-              "</div>" +
-              "</div>",
-        magnitude: 40,
-        color: colorNO2
-      };
-
-      nodePoints[3] = {
-        center: new google.maps.LatLng(1.118869, 104.047097),
-        id: 3,
-        addr: '<div id="content">' +
-              '<div id="siteNotice">' +
-              "</div>" +
-              '<h5 id="firstHeading" class="firstHeading">Sensor Node D</h5>' +
-              '<div id="bodyContent">' +
-              "Partikel udara : "+ SO2 +"<br>" +
-              "Kadar ISPU : {{ $SO2 }}<br>" +
-              "keterangan : "+ indicationSO2 +"<br>" +
-              "</div>" +
-              "</div>",
-        magnitude: 40,
-        color: colorSO2
-      };
-
-      nodePoints[4] = {
-        center: new google.maps.LatLng(1.117819, 104.047335),
-        id: 4,
-        addr: '<div id="content">' +
-              '<div id="siteNotice">' +
-              "</div>" +
-              '<h5 id="firstHeading" class="firstHeading">Sensor Node E</h5>' +
-              '<div id="bodyContent">' +
-              "Partikel udara : "+ PM10 +"<br>" +
-              "Kadar ISPU : {{ $PM10 }}<br>" +
-              "keterangan : "+ indicationPM10 +"<br>" +
-              "</div>" +
-              "</div>",
-        magnitude: 40,
-        color: colorPM10
-      };
-
-      nodePoints[5] = {
-        center: new google.maps.LatLng(1.118484, 104.048437),
+        center: new google.maps.LatLng(1.1187064518854246, 104.04756793132022),
         id: 5,
         addr: '<div id="content">' +
               '<div id="siteNotice">' +
@@ -980,17 +1004,20 @@
               "Device: Raspberry pi B + Dragino Raspberry Pi LoRa/GPS HAT" +
               "</div>" +
               "</div>",
-        magnitude: 10,
+        magnitude: 180,
         color: 'rgb(255, 77, 0)'
       }
 
       var nodeCircle;
       var infoWindow = new google.maps.InfoWindow();
       
+      //old coordinate center map view
+      // center: new google.maps.LatLng(1.118709, 104.048585)
+
       function initialize(){
         var mapOptions = {
-          zoom: 17,
-          center: new google.maps.LatLng(1.118709, 104.048585),
+          zoom: 13.5,
+          center: new google.maps.LatLng(1.1362021667790438, 104.03912727127721),
           mapTypeId: google.maps.MapTypeId.ROADMAP
         };
 
@@ -1003,7 +1030,7 @@
             strokeOpacity: 0.8,
             strokeWeight: 0,
             fillColor: nodePoints[i].color,
-            fillOpacity: 0.5,
+            fillOpacity: 0.8,
             map: map,
             center: nodePoints[i].center,
             radius: nodePoints[i].magnitude,
@@ -1031,7 +1058,82 @@
       /*======================== END GMAPS API ========================*/
     </script>
 
+
+    
     {{-- <script>
+
+      // ============ DO NOT DELETE ============ //
+      // ============ THIS IS LOOPING NODE SENSOR LOCATION MAP //
+      // nodePoints[1] = {
+      //   center: new google.maps.LatLng(1.119758, 104.049405),
+      //   id: 1,
+      //   addr: '<div id="content">' +
+      //         '<div id="siteNotice">' +
+      //         "</div>" +
+      //         '<h5 id="firstHeading" class="firstHeading">Sensor Node B</h5>' +
+      //         '<div id="bodyContent">' +
+      //         "Partikel udara : "+ O3 +"<br>" +
+      //         "Kadar ISPU : {{ $O3 }}<br>" +
+      //         "keterangan : "+ indicationO3 +"<br>" +
+      //         "</div>" +
+      //         "</div>",
+      //   magnitude: 40,
+      //   color: colorO3
+      // };
+
+      // nodePoints[2] = {
+      //   center: new google.maps.LatLng(1.118752, 104.050337),
+      //   id: 2,
+      //   addr: '<div id="content">' +
+      //         '<div id="siteNotice">' +
+      //         "</div>" +
+      //         '<h5 id="firstHeading" class="firstHeading">Sensor Node C</h5>' +
+      //         '<div id="bodyContent">' +
+      //         "Partikel udara : "+ NO2 +"<br>" +
+      //         "Kadar ISPU : {{ $NO2 }}<br>" +
+      //         "keterangan : "+ indicationNO2 +"<br>" +
+      //         "</div>" +
+      //         "</div>",
+      //   magnitude: 40,
+      //   color: colorNO2
+      // };
+
+      // nodePoints[3] = {
+      //   center: new google.maps.LatLng(1.118869, 104.047097),
+      //   id: 3,
+      //   addr: '<div id="content">' +
+      //         '<div id="siteNotice">' +
+      //         "</div>" +
+      //         '<h5 id="firstHeading" class="firstHeading">Sensor Node D</h5>' +
+      //         '<div id="bodyContent">' +
+      //         "Partikel udara : "+ SO2 +"<br>" +
+      //         "Kadar ISPU : {{ $SO2 }}<br>" +
+      //         "keterangan : "+ indicationSO2 +"<br>" +
+      //         "</div>" +
+      //         "</div>",
+      //   magnitude: 40,
+      //   color: colorSO2
+      // };
+
+      // nodePoints[4] = {
+      //   center: new google.maps.LatLng(1.117819, 104.047335),
+      //   id: 4,
+      //   addr: '<div id="content">' +
+      //         '<div id="siteNotice">' +
+      //         "</div>" +
+      //         '<h5 id="firstHeading" class="firstHeading">Sensor Node E</h5>' +
+      //         '<div id="bodyContent">' +
+      //         "Partikel udara : "+ PM10 +"<br>" +
+      //         "Kadar ISPU : {{ $PM10 }}<br>" +
+      //         "keterangan : "+ indicationPM10 +"<br>" +
+      //         "</div>" +
+      //         "</div>",
+      //   magnitude: 40,
+      //   color: colorPM10
+      // };
+
+      // ====================== END OF LOOPING NODE SENSOR LOCATION //
+
       function initMap() {
         const GU = { lat: 1.118484, lng: 104.048437 };
         const maps = new google.maps.Map(document.getElementById("map"), {
