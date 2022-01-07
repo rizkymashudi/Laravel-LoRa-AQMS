@@ -1,1 +1,1 @@
-repo project tugas akhir D3 Informatika
+repo project tugas akhir
